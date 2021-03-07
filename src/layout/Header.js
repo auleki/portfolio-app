@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderWrap, PageWrap, Row, SubTitle, Title } from '../components/StyledComponents';
+import { HeaderWrap, PageWrap, Paragraph, Row, SubTitle, Title } from '../components/StyledComponents';
 
 const Header = () => {
 	const avatarImg =
@@ -12,13 +12,13 @@ const Header = () => {
 					<img src={avatarImg} alt="avatar" />
 				</div>
 				<div className="title">
-					<Title>Emmanuel B. Giwa</Title>
+					<Title crazyFont>Emmanuel B. Giwa</Title>
 					<SubTitle>Fullstack Developer</SubTitle>
 				</div>
-				<Row xCenter>
-					<p>Twitter</p>
-					<p>Github</p>
-					<p>LinkedIn</p>
+				<Row justifyContent="center">
+					<Paragraph>Twitter</Paragraph>
+					<Paragraph>Github</Paragraph>
+					<Paragraph>LinkedIn</Paragraph>
 				</Row>
 			</div>
 		</HeaderWrap>

@@ -1,2 +1,3 @@
 - add an image to bottom of header for a parralax effect 
 - use a control panel kind of setup, where there is a fixed type to "back to the top" button, but this shows actions like back to the top, other menus and a maybe other vital actions, like download resume and so on 
+- use libre barcode for barcode texts 

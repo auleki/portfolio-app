@@ -9,12 +9,13 @@ import Experience from '../layout/Experience';
 import { ThemeProvider } from 'styled-components';
 
 const Homepage = () => {
-	const [ bright, setBright ] = useState(true);
+	const [ bright, setBright ] = useState(false);
 
-	const themeState = bright ? 'dark' : 'light';
+	// use here for theme switch
+	// const themeState = bright ? 'dark' : 'light';
 
 	return (
-		<ThemeProvider theme={{ mode: themeState }}>
+		<ThemeProvider theme={{ mode: 'dark' }}>
 			<PageWrap>
 				<Header />
 				<ThemeSwitchButton onClick={() => setBright(!bright)}>{!bright ? 'DARK' : 'LIGHT'}</ThemeSwitchButton>
