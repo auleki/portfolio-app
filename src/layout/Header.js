@@ -16,9 +16,9 @@ const Header = () => {
 					<SubTitle>Fullstack Developer</SubTitle>
 				</div>
 				<Row justifyContent="center">
-					<Paragraph>Twitter</Paragraph>
-					<Paragraph>Github</Paragraph>
-					<Paragraph>LinkedIn</Paragraph>
+					<Paragraph white>Twitter</Paragraph>
+					<Paragraph white>Github</Paragraph>
+					<Paragraph white>LinkedIn</Paragraph>
 				</Row>
 			</div>
 		</HeaderWrap>

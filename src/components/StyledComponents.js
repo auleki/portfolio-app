@@ -69,7 +69,7 @@ export const HeaderWrap = styled.div`
 			object-fit: cover;
 			border-radius: 100em;
 			width: 15em;
-			border: .5em solid ${c6};
+			border: .5em solid ${colors.lightGreen};
 			transition: border 400ms ease-in, transform 200ms ease-in;
 
 			&:hover {
@@ -82,17 +82,19 @@ export const HeaderWrap = styled.div`
 `;
 
 export const Title = styled.h1(
-	({ crazyFont }) => `
+	({ crazyFont, marginX, marginY }) => `
 	font-family: ${crazyFont ? fonts.crazy : fonts.secondary};
 	font-size: 2em;
 	font-weight: 400;
+	margin: ${marginY || 0} ${marginX || 0};
 `
 );
 
 export const Paragraph = styled.p(
-	({ size, color }) => `
+	({ size, color, white, marginX, marginY }) => `
 		font-size: ${size ? size : 1}em;
-		color: ${color ? color : colors.hardDark};
+		color: ${color ? color : white ? colors.white : colors.hardDark};
+		margin: ${marginY || 0} ${marginX || 0};
 	`
 );
 
@@ -106,19 +108,117 @@ export const SubTitle = styled.h2(
 );
 
 export const Row = styled.div(
-	({ alignItems, justifyContent }) => `
-		justify-content: ${justifyContent ? justifyContent : 'inherit'};
+	({ alignItems, justifyContent, paddingX, paddingY }) => `
+		justify-content: ${justifyContent || 'inherit'};
+		align-items: ${alignItems || 'inherit'};
 		display: flex;
 		width: 100%;
-		align-items: ${alignItems ? alignItems : 'inherit'};
+		padding: ${paddingY || 0}em ${paddingX || 0}em;
 
 		.bio {
 			width: 40%;
 			margin-left: 3em;
+			// background: ${colors.white};
+
+			.mb-3 {
+				margin-bottom: 3em;
+			}
+
+			// .intro {
+			// 	margin-bottom: 3em;
+			// }
+
+			// .quote {
+			// 	margin-bottom: 3em;
+			// }
+			
+			// .summary {
+			// 	margin-bottom: 3em;
+			// }
+
+			.skills {
+				
+			}
 		}
-		
+
+		.aboutSection {
+			display: flex;
+			// align-items: center;
+			padding: 4em 0;
+			justify-content: center;
+			width: 100%;
+			height: 100vh;
+
+		}
+
+		.projectCards {
+			// background: ${colors.red};
+		}
 	`
 );
+
+export const SkillCard = styled.div`
+		height: 8em;
+		background-color: ${colors.hardDark};
+		color: ${c6};
+		width: 25em;
+		border-radius: .1em;
+		/* border-top-right-radius: 1em; */
+		border-bottom-right-radius: .5em;
+		margin-bottom: .5em;
+		padding: 1em 2em;
+		transition: 400ms ease-in;
+		border-right: solid transparent .2em;
+	
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.02);
+			border-right: solid ${colors.lightGreen} .2em;
+			box-shadow: 0px 19px 50px -22px rgba(20,20,20,0.86);
+		}
+	
+		&:nth-child(2) {
+			/* background-color: ${colors.cream}; */
+			&:hover {
+				border-right: solid ${colors.red} .2em;
+			
+			}
+		}
+
+		&:nth-child(3) {
+			/* background-color: ${colors.cream}; */
+			&:hover {
+				border-right: solid ${colors.darkCream} .2em;
+			
+			}
+		}
+
+		&:nth-child(4) {
+		/* background-color: ${colors.cream}; */
+			&:hover {
+			border-right: solid ${colors.green} .2em;
+
+			}
+		}
+
+		&:nth-child(5) {
+		/* background-color: ${colors.cream}; */
+			&:hover {
+			border-right: solid ${colors.darkCream} .2em;
+
+			}
+		}
+
+		&:nth-child(6) {
+		/* background-color: ${colors.cream}; */
+			&:hover {
+			border-right: solid ${colors.cream} .2em;
+
+			}
+		}
+		
+
+	`;
 
 export const SectionWrap = styled.div`
 	height: 100vh;
@@ -126,19 +226,6 @@ export const SectionWrap = styled.div`
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
-`;
-
-export const SCards = styled.div`
-	height: 10em;
-	background-color: ${colors.hardDark};
-	color: ${c6};
-	width: 25em;
-	margin-bottom: 2em;
-	padding: 1em 2em;
-
-	&:hover {
-		cursor: pointer;
-	}
 `;
 
 const ThemeButtonColor = theme('mode', {
