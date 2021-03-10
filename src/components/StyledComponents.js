@@ -216,7 +216,9 @@ export const SkillCard = styled.div`
 	`;
 
 export const SectionWrap = styled.div`
-	height: 100vh;
+	padding: 1em 0;
+	min-height: 100vh;
+	/* overflow-y: scroll; */
 	border-top: .3em solid ${c6};
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
@@ -280,11 +282,35 @@ export const SectionWrap = styled.div`
 			grid-gap: 1em;
 			
 			section {
+				border: .3em solid transparent;
+				border-radius: .3em;
 				padding: 2em;
+				transition: 300ms ease-in-out;
 				background: ${colors.hardDark};
+
+				.time {
+					color: ${colors.gray};
+				}
+				
+				.company {
+					margin: 1em 0 .5em 0;
+					display: block;
+					padding: 1em 0;
+					text-align: center;
+					background: ${colors.blue};
+					
+				}
+
+				&:hover {
+					border: .3em solid ${colors.gray};
+				}
 			}
 			.work-experience {
 				list-style-type: none;
+
+				li {
+					padding: .5em 0;
+				}
 			}
 		}
 	}

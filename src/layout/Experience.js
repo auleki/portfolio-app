@@ -54,8 +54,10 @@ const Experience = () => {
 						</ul>
 					</section>
 					<section>
-						<span className="time">Aug 2020 - Nov 2020</span>
-						<span className="position">Lead Frontend Engineer</span>
+						<div className="row">
+							<span className="time">Aug 2020 - Nov 2020</span>
+							<span className="position">Lead Frontend Engineer</span>
+						</div>
 						<span className="company">Primeclick Digital Marketing Agency</span>
 						<ul className="work-experience">
 							<li>
@@ -82,8 +84,10 @@ const Experience = () => {
 						</ul>
 					</section>
 					<section>
-						<span className="time">Aug 2020 - Nov 2020</span>
-						<span className="position">Frontend Engineer</span>
+						<div className="row">
+							<span className="time">Aug 2020 - Nov 2020</span>
+							<span className="position">Frontend Engineer</span>
+						</div>
 						<span className="company">HNG Internship</span>
 						<ul className="work-experience">
 							<li>Out of 13,000 applicants from Africa, I graduated as one of the 256 finalists.</li>
@@ -106,8 +110,10 @@ const Experience = () => {
 						</ul>
 					</section>
 					<section>
-						<span className="time">Aug 2020 - Nov 2020</span>
-						<span className="position">Frontend Engineer</span>
+						<div className="row">
+							<span className="time">Aug 2020 - Nov 2020</span>
+							<span className="position">Frontend Engineer</span>
+						</div>
 						<span className="company">Cutstruct Technologies</span>
 						<ul className="work-experience">
 							<li>Designed the UI for our Panic mobile application</li>
