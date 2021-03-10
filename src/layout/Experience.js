@@ -87,7 +87,7 @@ const Experience = () => {
 							<span className="time">Aug 2020 - Nov 2020</span>
 							<span className="position">Lead Frontend Engineer</span>
 						</div>
-						<span className="company">Primeclick Digital Marketing Agency</span>
+						<span className="company">Primeclick Digital Marketing</span>
 						<ul className="work-experience">
 							<li>
 								<img src={flameIcon} alt="" />

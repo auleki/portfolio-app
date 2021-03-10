@@ -118,7 +118,7 @@ export const SubTitle = styled.h2(
 		font-weight: 400;
 		font-family: ${fonts.secondary};
 		font-size: ${size ? size : 1}em;
-		color: ${secondary ? colors.lightGreen : colors.white}
+		color: ${secondary ? colors.lightGreen : color ? color : colors.white};
 	`
 );
 
@@ -215,10 +215,19 @@ export const SkillCard = styled.div`
 
 	`;
 
+export const ProjectCard = styled.div`
+	background: ${colors.hardDark};
+	height: 8em;
+	color: ${c6};
+	width: 25em;
+	border-radius: .1em;
+	padding: 1em 2em;
+`;
+
 export const SectionWrap = styled.div`
 	padding: 1em 0;
 	min-height: 100vh;
-	/* overflow-y: scroll; */
+	overflow-y: hidden;
 	border-top: .3em solid ${c6};
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
@@ -323,6 +332,7 @@ export const SectionWrap = styled.div`
 					align-items: center;
 
 					img {
+						display: none;
 						height: 3em;
 						width: 3em;
 					}
@@ -332,6 +342,39 @@ export const SectionWrap = styled.div`
 			&:hover {
 				cursor: none;
 			}
+		}
+	}
+
+	@media (max-width: 1340px) {
+		.work .row {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			span:nth-child(1) {
+				margin-bottom: .5em;
+			}
+		}
+	}
+
+	@media (min-width: 720px) and (max-width: 1044px) {
+		.experience .work {
+			display: grid;
+			grid-template-columns: repeat(2, 4fr);
+		}
+
+		.experience .education {
+			display: block;
+		}
+	}
+
+	.recentProjects {
+
+	}
+
+	@media (min-width: 320px) and (max-width: 720px) {
+		.experience .work {
+			display: block;
+			/* grid-template-columns: repeat(2, 4fr); */
 		}
 	}
 `;

@@ -5,3 +5,4 @@
 - add analytics to portfolio
 - for experience on hover make flame icons burn, or use animated icons 
 - on project card make arrow appear when hover over link 
+- on work experience card, add neon to position on hover (https://daily-dev-tips.com/posts/css-neon-animation/)

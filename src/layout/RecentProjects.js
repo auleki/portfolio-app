@@ -1,10 +1,13 @@
 import React from 'react';
-import { SectionWrap, SubTitle } from '../components/StyledComponents';
+import { ProjectCard, SectionWrap, SubTitle } from '../components/StyledComponents';
 
 const RecentProjects = () => {
 	return (
 		<SectionWrap>
-			<SubTitle>RECENT PRoJECTS</SubTitle>
+			<SubTitle color="#737373">Recent Projects</SubTitle>
+			<ProjectCard>
+				<SubTitle>Hello</SubTitle>
+			</ProjectCard>
 		</SectionWrap>
 	);
 };

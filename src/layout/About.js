@@ -27,7 +27,9 @@ const About = () => {
 					</div>
 					<div className="bio">
 						<div className="mb-3">
-							<SubTitle size={0.8}>Introduction</SubTitle>
+							<SubTitle color="#737373" size={0.9}>
+								Introduction
+							</SubTitle>
 						</div>
 						<div className="mb-3">
 							<Title>Hi there! I'm Emmanuel Giwa</Title>
@@ -50,7 +52,9 @@ const About = () => {
 						</div>
 
 						<div className="skills">
-							<SubTitle size={0.8}>Skills</SubTitle>
+							<SubTitle color="#737373" size={0.9}>
+								Skills
+							</SubTitle>
 						</div>
 					</div>
 				</div>
