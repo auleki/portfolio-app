@@ -285,7 +285,7 @@ export const SectionWrap = styled.div`
 				border: .3em solid transparent;
 				border-radius: .3em;
 				padding: 2em;
-				transition: 800ms ease-in-out;
+				transition: 500ms ease-in-out;
 				background: ${colors.hardDark};
 
 				.time {
@@ -296,14 +296,18 @@ export const SectionWrap = styled.div`
 					margin: 1em 0 .5em 0;
 					display: block;
 					padding: 1em 0;
+					border-radius: .1em;
 					text-align: center;
-					background: ${colors.blue};
-					
+					background: ${colors.red};	
+				}
+
+				.position {
+					color: ${colors.lightGreen};
 				}
 
 				&:hover {
 					/* border: .3em solid ${colors.gray}; */
-					background: ${colors.darkGreen};
+					background: ${colors.dark};
 					cursor: none;
 					.time {
 						color: ${colors.darkCream};
@@ -315,6 +319,13 @@ export const SectionWrap = styled.div`
 
 				li {
 					padding: .5em 0;
+					display: flex;
+					align-items: center;
+
+					img {
+						height: 3em;
+						width: 3em;
+					}
 				}
 			}
 

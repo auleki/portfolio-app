@@ -3,3 +3,5 @@
 - use libre barcode for barcode texts 
 - for the project cards, take away the border-bottom-right-radius pre hover
 - add analytics to portfolio
+- for experience on hover make flame icons burn, or use animated icons 
+- on project card make arrow appear when hover over link 
