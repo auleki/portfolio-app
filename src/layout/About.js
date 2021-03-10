@@ -5,28 +5,24 @@ const About = () => {
 	return (
 		<SectionWrap>
 			{/* <Title>About Page</Title> */}
-			<Row justifyContent="center">
+			<Row justifyContent="center" alignItems="center">
 				<div className="aboutSection">
 					<div className="projectCards">
 						<SkillCard>
-							<SubTitle secondary>Vanilla Javascript</SubTitle>
+							<SubTitle secondary>Frontend Projects</SubTitle>
 							<Paragraph white>6 Projects</Paragraph>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>React</SubTitle>
+							<SubTitle secondary>Backend Projects</SubTitle>
 							<Paragraph white>25 Projects</Paragraph>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>Python</SubTitle>
+							<SubTitle secondary>Fullstack Projects</SubTitle>
 							<Paragraph white>3 Projects</Paragraph>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>C#</SubTitle>
+							<SubTitle secondary>Mobile Projects</SubTitle>
 							<Paragraph white>3 Projects</Paragraph>
-						</SkillCard>
-						<SkillCard>
-							<SubTitle secondary>Laravel</SubTitle>
-							<Paragraph white>1 Projects</Paragraph>
 						</SkillCard>
 					</div>
 					<div className="bio">

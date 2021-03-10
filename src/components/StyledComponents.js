@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import theme from 'styled-theming';
 import Header from '../layout/Header';
 let c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
@@ -9,7 +9,7 @@ c3 = '#6A994E';
 c4 = '#386641';
 c5 = '#BC4749';
 c6 = '#F9F8F8';
-c7 = '#272838';
+c7 = '#0B8BFF';
 c8 = '#E9DFC7';
 
 const colors = {
@@ -18,12 +18,27 @@ const colors = {
 	lightGreen: c2,
 	green: c3,
 	darkGreen: c4,
+	blue: c7,
 	red: c5,
 	white: c6,
 	gray: '#737373',
 	dark: '#242424',
 	hardDark: '#1a1a1a'
 };
+
+const shockBounce = keyframes`
+	0% {
+		transform: translateY(-.2em);
+	}
+
+	60% {
+		transform: translateY(.2em);
+	}
+
+	100% {
+		transform: translateY(0em);
+	}
+`;
 
 const fonts = {
 	main: 'Inconsolata',
@@ -120,22 +135,6 @@ export const Row = styled.div(
 			margin-left: 3em;
 			// background: ${colors.white};
 
-			.mb-3 {
-				margin-bottom: 3em;
-			}
-
-			// .intro {
-			// 	margin-bottom: 3em;
-			// }
-
-			// .quote {
-			// 	margin-bottom: 3em;
-			// }
-			
-			// .summary {
-			// 	margin-bottom: 3em;
-			// }
-
 			.skills {
 				
 			}
@@ -148,7 +147,6 @@ export const Row = styled.div(
 			justify-content: center;
 			width: 100%;
 			height: 100vh;
-
 		}
 
 		.projectCards {
@@ -196,24 +194,21 @@ export const SkillCard = styled.div`
 		&:nth-child(4) {
 		/* background-color: ${colors.cream}; */
 			&:hover {
-			border-right: solid ${colors.green} .2em;
-
+				border-right: solid ${colors.blue} .2em;
 			}
 		}
 
 		&:nth-child(5) {
 		/* background-color: ${colors.cream}; */
 			&:hover {
-			border-right: solid ${colors.darkCream} .2em;
-
+				border-right: solid ${colors.darkCream} .2em;
 			}
 		}
 
 		&:nth-child(6) {
 		/* background-color: ${colors.cream}; */
 			&:hover {
-			border-right: solid ${colors.cream} .2em;
-
+				border-right: solid ${colors.cream} .2em;
 			}
 		}
 		
@@ -226,6 +221,73 @@ export const SectionWrap = styled.div`
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
+
+	.experience {
+
+		.time {
+			color: ${colors.darkCream};
+		}
+
+		.instituite {
+			color: ${colors.gray};
+		}
+
+		.type {
+			color: ${colors.lightGreen};
+		}
+		
+		.education,
+		.work {
+			section {
+				/* padding: 1em 1em; */
+				margin: 1em 0;
+				/* background-color: ${colors.darkGreen}; */
+			}
+		}
+
+		.education {
+			display: flex;
+			justify-content: space-between;
+			padding: 0 2em;
+			section {
+				width: 100%;
+				padding: 2em 1em;
+				background: ${colors.hardDark};
+				transition: 500ms ease-in-out;
+				border-top: .2em solid transparent;
+
+				&:nth-child(1), &:nth-child(2) {
+					margin-right: 1em;
+				}
+				.row {
+					margin: .5em 0;
+				}
+
+				&:hover {
+					border-top: .2em solid ${colors.red};
+					animation: ${shockBounce} 1s 0s;
+					cursor: pointer;
+					border-top-right-radius: .2em;
+					border-top-left-radius: .2em;
+				}
+			}
+		}
+
+		.work {
+			padding: 0 2em;
+			display: grid;
+			grid-template-columns: repeat(3, 2fr);
+			grid-gap: 1em;
+			
+			section {
+				padding: 2em;
+				background: ${colors.hardDark};
+			}
+			.work-experience {
+				list-style-type: none;
+			}
+		}
+	}
 `;
 
 const ThemeButtonColor = theme('mode', {
