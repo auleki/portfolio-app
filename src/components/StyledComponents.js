@@ -285,7 +285,7 @@ export const SectionWrap = styled.div`
 				border: .3em solid transparent;
 				border-radius: .3em;
 				padding: 2em;
-				transition: 300ms ease-in-out;
+				transition: 800ms ease-in-out;
 				background: ${colors.hardDark};
 
 				.time {
@@ -302,7 +302,12 @@ export const SectionWrap = styled.div`
 				}
 
 				&:hover {
-					border: .3em solid ${colors.gray};
+					/* border: .3em solid ${colors.gray}; */
+					background: ${colors.darkGreen};
+					cursor: none;
+					.time {
+						color: ${colors.darkCream};
+					}
 				}
 			}
 			.work-experience {
@@ -311,6 +316,10 @@ export const SectionWrap = styled.div`
 				li {
 					padding: .5em 0;
 				}
+			}
+
+			&:hover {
+				cursor: none;
 			}
 		}
 	}
