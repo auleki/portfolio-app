@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionWrap, Title } from '../components/StyledComponents';
+import { SectionWrap, Title, SubTitle } from '../components/StyledComponents';
 
 const Experience = () => {
 	const flameIcon =
@@ -7,6 +7,10 @@ const Experience = () => {
 	return (
 		<SectionWrap>
 			<div className="experience">
+				<div className="sectionTitle">
+					<div className="dash" />
+					<SubTitle size={3}>Education & Experience</SubTitle>
+				</div>
 				<div className="education">
 					<section>
 						<div className="row">
@@ -176,7 +180,7 @@ const Experience = () => {
 							</li>
 						</ul>
 					</section>
-					<section>
+					{/* <section>
 						<div className="row">
 							<span className="time">Aug 2020 - Nov 2020</span>
 							<span className="position">Frontend Engineer</span>
@@ -200,7 +204,7 @@ const Experience = () => {
 								<p>Worked closely with my team to deliver new features ahead of deadlines.</p>
 							</li>
 						</ul>
-					</section>
+					</section> */}
 				</div>
 			</div>
 		</SectionWrap>

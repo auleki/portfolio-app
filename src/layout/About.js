@@ -5,6 +5,10 @@ const About = () => {
 	return (
 		<SectionWrap>
 			{/* <Title>About Page</Title> */}
+			{/* <div className="sectionTitle ml-2">
+				<div className="dash" />
+				<SubTitle size={3}>About Me</SubTitle>
+			</div> */}
 			<Row justifyContent="center" alignItems="center">
 				<div className="aboutSection">
 					<div className="projectCards">

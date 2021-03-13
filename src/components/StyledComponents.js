@@ -76,6 +76,14 @@ export const HeaderWrap = styled.div`
 
 	.content {
 		text-align: center;
+
+		.headerSocialLinks {
+			display: flex;
+			a {
+				color: ${colors.white};
+
+			}
+		}
 	}
 
 	.avatar {
@@ -97,16 +105,16 @@ export const HeaderWrap = styled.div`
 `;
 
 export const Title = styled.h1(
-	({ crazyFont, marginX, marginY }) => `
-	font-family: ${crazyFont ? fonts.crazy : fonts.secondary};
-	font-size: 2em;
-	font-weight: 400;
-	margin: ${marginY || 0} ${marginX || 0};
-`
+	({ crazyFont, marginX, marginY, size }) => css`
+		font-family: ${crazyFont ? fonts.crazy : fonts.secondary};
+		font-size: ${size || 2}em;
+		font-weight: 400;
+		margin: ${marginY || 0} ${marginX || 0};
+	`
 );
 
 export const Paragraph = styled.p(
-	({ size, color, white, marginX, marginY }) => `
+	({ size, color, white, marginX, marginY }) => css`
 		font-size: ${size ? size : 1}em;
 		color: ${color ? color : white ? colors.white : colors.hardDark};
 		margin: ${marginY || 0} ${marginX || 0};
@@ -114,7 +122,7 @@ export const Paragraph = styled.p(
 );
 
 export const SubTitle = styled.h2(
-	({ size, color, secondary }) => `
+	({ size, color, secondary }) => css`
 		font-weight: 400;
 		font-family: ${fonts.secondary};
 		font-size: ${size ? size : 1}em;
@@ -123,7 +131,7 @@ export const SubTitle = styled.h2(
 );
 
 export const Row = styled.div(
-	({ alignItems, justifyContent, paddingX, paddingY }) => `
+	({ alignItems, justifyContent, paddingX, paddingY }) => css`
 		justify-content: ${justifyContent || 'inherit'};
 		align-items: ${alignItems || 'inherit'};
 		display: flex;
@@ -215,26 +223,149 @@ export const SkillCard = styled.div`
 
 	`;
 
-export const ProjectCard = styled.div`
+export const StyleProjectCard = styled.div`
 	background: ${colors.hardDark};
-	height: 8em;
+	height: 100%;
 	color: ${c6};
-	width: 25em;
-	border-radius: .1em;
-	padding: 1em 2em;
+	transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
+	width: 30em;
+	border-radius: .3em;
+	border-bottom: .3em solid ${colors.cream};
+	padding-bottom: 4em;
+
+	&:hover {
+		border-bottom: .3em solid ${colors.green};
+		box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+		-webkit-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+		-moz-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+	}
+
+	.image {
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	.info {
+		padding: 1em 1em;
+	}
+
+	.actions {
+		display: flex;
+		justify-content: space-between;
+	}
 `;
 
-export const SectionWrap = styled.div`
+export const SectionWrap = styled.div(
+	({ alignItems, justifyContent }) => css`
 	padding: 1em 0;
 	min-height: 100vh;
 	overflow-y: hidden;
-	border-top: .3em solid ${c6};
+	display: flex;
+	flex-direction: column;
+	align-items: ${alignItems || 'inherit'};
+	justify-content: ${justifyContent || 'inherit'};
+	/* border-top: .3em solid ${c6}; */
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
 
+	.sectionTitle {
+		display: flex;
+		flex-direction: column-reverse;
+		/* padding: 0 2em; */
+		padding-bottom: 1.5em;
+		padding-top: 5.5em;
+		
+		
+		h2 { 
+			transition: color 300ms ease-in, transform 400ms ease-in;
+			color: ${colors.gray};
+		}
+		.dash {
+			width: 2em;			
+			border-radius: 100px;
+			height: .5em;
+			transition: 1000ms ease-in;
+			background: ${colors.blue};
+		}
+
+		&:hover {
+			h2 {
+				transform: translate(.2em, -.3em);
+			}
+
+			.dash {
+				background: ${colors.lightGreen};
+			}
+		}
+	}
+
+	.contact {
+		padding: 0 2em;
+
+		.or {
+			/* background: ${colors.blue}; */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.socialLinks {
+			/* background: ${colors.red}; */
+		}
+
+		.contactSection {
+			display: grid;
+			grid-template-columns: 2fr 1fr 2fr;
+			grid-gap: 1em;
+		}
+	}
+
+	.input_group {
+		display: flex;
+		flex-direction: column;
+		margin: 1em 0;
+		label {
+			margin: 1em 0;
+			color: ${colors.gray};
+		}
+
+		input, textarea {
+			padding: 1em 1em;
+			transition: 200ms ease-in;
+			border-radius: .2em;
+			line-height: 1.5em;
+			color: ${colors.white};
+			border-bottom: .2em solid ${colors.red} ;
+			background: transparent;
+			&:focus {
+				background: transparent;	
+				color: ${colors.white};
+				border-bottom: .2em solid ${colors.lightGreen};
+
+				label {
+					color: ${colors.blue};
+				}
+			}
+		}
+	}
+
+	.recentProjects {
+			padding: 0 2em;
+			width: 100%;
+			.projects {
+				display: grid;
+				grid-template-columns: repeat(3, 2fr);
+				grid-gap: 2em;
+				grid-row-gap: 5em;
+			}
+		}
+
 	.experience {
 
+		padding: 0 2em;
 		.time {
 			color: ${colors.darkCream};
 		}
@@ -259,7 +390,7 @@ export const SectionWrap = styled.div`
 		.education {
 			display: flex;
 			justify-content: space-between;
-			padding: 0 2em;
+			/* padding: 0 2em; */
 			section {
 				width: 100%;
 				padding: 2em 1em;
@@ -285,7 +416,7 @@ export const SectionWrap = styled.div`
 		}
 
 		.work {
-			padding: 0 2em;
+			/* padding: 0 2em; */
 			display: grid;
 			grid-template-columns: repeat(3, 2fr);
 			grid-gap: 1em;
@@ -343,6 +474,8 @@ export const SectionWrap = styled.div`
 				cursor: none;
 			}
 		}
+
+		
 	}
 
 	@media (max-width: 1340px) {
@@ -367,17 +500,171 @@ export const SectionWrap = styled.div`
 		}
 	}
 
-	.recentProjects {
-
-	}
-
 	@media (min-width: 320px) and (max-width: 720px) {
 		.experience .work {
 			display: block;
 			/* grid-template-columns: repeat(2, 4fr); */
 		}
 	}
-`;
+	`
+);
+
+// export const SectionWrap = styled.div`
+
+// 	${({ justifyContent, alignContent }) =>
+// 		justifyContent}
+
+// 	.recentProjects {
+// 			display: grid;
+// 			grid-template-columns: repeat(3, 2fr);
+// 			padding: 0 2em;
+// 			grid-gap: 1em;
+// 			grid-row-gap: 5em;
+// 			width: 100%;
+// 		}
+
+// 	.experience {
+
+// 		.time {
+// 			color: ${colors.darkCream};
+// 		}
+
+// 		.instituite {
+// 			color: ${colors.gray};
+// 		}
+
+// 		.type {
+// 			color: ${colors.lightGreen};
+// 		}
+
+// 		.education,
+// 		.work {
+// 			section {
+// 				/* padding: 1em 1em; */
+// 				margin: 1em 0;
+// 				/* background-color: ${colors.darkGreen}; */
+// 			}
+// 		}
+
+// 		.education {
+// 			display: flex;
+// 			justify-content: space-between;
+// 			padding: 0 2em;
+// 			section {
+// 				width: 100%;
+// 				padding: 2em 1em;
+// 				background: ${colors.hardDark};
+// 				transition: 500ms ease-in-out;
+// 				border-top: .2em solid transparent;
+
+// 				&:nth-child(1), &:nth-child(2) {
+// 					margin-right: 1em;
+// 				}
+// 				.row {
+// 					margin: .5em 0;
+// 				}
+
+// 				&:hover {
+// 					border-top: .2em solid ${colors.red};
+// 					animation: ${shockBounce} 1s 0s;
+// 					cursor: pointer;
+// 					border-top-right-radius: .2em;
+// 					border-top-left-radius: .2em;
+// 				}
+// 			}
+// 		}
+
+// 		.work {
+// 			padding: 0 2em;
+// 			display: grid;
+// 			grid-template-columns: repeat(3, 2fr);
+// 			grid-gap: 1em;
+
+// 			section {
+// 				border: .3em solid transparent;
+// 				border-radius: .3em;
+// 				padding: 2em;
+// 				transition: 500ms ease-in-out;
+// 				background: ${colors.hardDark};
+
+// 				.time {
+// 					color: ${colors.gray};
+// 				}
+
+// 				.company {
+// 					margin: 1em 0 .5em 0;
+// 					display: block;
+// 					padding: 1em 0;
+// 					border-radius: .1em;
+// 					text-align: center;
+// 					background: ${colors.red};
+// 				}
+
+// 				.position {
+// 					color: ${colors.lightGreen};
+// 				}
+
+// 				&:hover {
+// 					/* border: .3em solid ${colors.gray}; */
+// 					background: ${colors.dark};
+// 					cursor: none;
+// 					.time {
+// 						color: ${colors.darkCream};
+// 					}
+// 				}
+// 			}
+// 			.work-experience {
+// 				list-style-type: none;
+
+// 				li {
+// 					padding: .5em 0;
+// 					display: flex;
+// 					align-items: center;
+
+// 					img {
+// 						/* display: none; */
+// 						height: 3em;
+// 						width: 3em;
+// 					}
+// 				}
+// 			}
+
+// 			&:hover {
+// 				cursor: none;
+// 			}
+// 		}
+
+// 	}
+
+// 	@media (max-width: 1340px) {
+// 		.work .row {
+// 			display: flex;
+// 			align-items: center;
+// 			flex-direction: column;
+// 			span:nth-child(1) {
+// 				margin-bottom: .5em;
+// 			}
+// 		}
+// 	}
+
+// 	@media (min-width: 720px) and (max-width: 1044px) {
+// 		.experience .work {
+// 			display: grid;
+// 			grid-template-columns: repeat(2, 4fr);
+// 		}
+
+// 		.experience .education {
+// 			display: block;
+// 		}
+// 	}
+
+// 	@media (min-width: 320px) and (max-width: 720px) {
+// 		.experience .work {
+// 			display: block;
+// 			/* grid-template-columns: repeat(2, 4fr); */
+// 		}
+// 	}
+// `;
 
 const ThemeButtonColor = theme('mode', {
 	light: c7,
@@ -388,6 +675,45 @@ const TextButtonColor = theme('mode', {
 	light: c2,
 	dark: c6
 });
+
+export const Button = styled.button(
+	({ primary, size, color, alternate, bgColor }) => `
+		padding: 1em 2em;
+		background: ${primary ? colors.dark : alternate ? colors.lightGreen : colors.cream};
+		transition: background 150ms ease-in, 
+		border-right 500ms ease-in;
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+		font-size: ${size || 0.8}em;
+		letter-spacing: .1em;
+		border-right: .5em solid ${colors.red};
+		font-family: ${fonts.secondary};
+		border-top-right-radius: .3em;
+		border-bottom-right-radius: .3em;
+		color: ${primary ? colors.darkCream : alternate ? colors.white : colors.hardDark};
+
+		ion-icon {
+			font-size: 1.5em;
+			margin-left: .5em;
+			transition: 400ms ease-out, transform 300ms ease-out;
+			opacity: 0.3;
+			position: relative;
+		}
+		
+		&:hover {
+			background: ${primary ? colors.red : colors.dark};
+			color: ${primary ? colors.darkCream : colors.cream};
+			border-right: .5em solid ${colors.white};
+			cursor: pointer;
+
+			ion-icon {
+				opacity: 1;
+				transform: translateX(.2em);
+			}
+		}
+	`
+);
 
 export const ThemeSwitchButton = styled.button`
 	background: ${ThemeButtonColor};
