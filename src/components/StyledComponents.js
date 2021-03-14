@@ -114,8 +114,9 @@ export const Title = styled.h1(
 );
 
 export const Paragraph = styled.p(
-	({ size, color, white, marginX, marginY }) => css`
+	({ size, color, white, marginX, marginY, center }) => css`
 		font-size: ${size ? size : 1}em;
+		text-align: ${center ? 'center' : 'inherit'};
 		color: ${color ? color : white ? colors.white : colors.hardDark};
 		margin: ${marginY || 0} ${marginX || 0};
 	`
@@ -314,6 +315,53 @@ export const SectionWrap = styled.div(
 
 		.socialLinks {
 			/* background: ${colors.red}; */
+			text-align: center;	
+			.links {
+				margin-top: 3em;
+				display: grid;
+				grid-template-columns: repeat(3, 3fr);
+				grid-row-gap: 3em;
+				justify-content: space-evenly;
+				align-items: center;
+				section {
+					a {
+						text-decoration: none;
+
+						h2 {
+							color: ${colors.cream};
+							border-bottom: .1em solid transparent;
+							margin: .5em 0 0;
+							padding: .5em 0;
+							transition: 200ms ease-in;
+						}
+						
+						img {
+							height: 4em;
+							width: 4em;
+							transition: 100ms ease-in;
+
+						}
+
+						&:hover {
+							color: ${colors.red};
+
+							img {
+								transform: translateY(.2em);
+							}
+
+							h2 {
+								color: ${colors.darkCream};
+								margin: .5em 0 0;
+								
+								border-bottom: .1em solid ${colors.red};
+
+							}
+
+						}
+					}
+					
+				}
+			}
 		}
 
 		.contactSection {
@@ -321,6 +369,13 @@ export const SectionWrap = styled.div(
 			grid-template-columns: 2fr 1fr 2fr;
 			grid-gap: 1em;
 		}
+	}
+
+	.form {
+		
+		/* p {
+			text-align: center;
+		} */
 	}
 
 	.input_group {
@@ -436,9 +491,11 @@ export const SectionWrap = styled.div(
 					margin: 1em 0 .5em 0;
 					display: block;
 					padding: 1em 0;
+					color: ${colors.dark};
+					font-weight: 600;
 					border-radius: .1em;
 					text-align: center;
-					background: ${colors.red};	
+					background: ${colors.darkCream};	
 				}
 
 				.position {
@@ -458,14 +515,25 @@ export const SectionWrap = styled.div(
 				list-style-type: none;
 
 				li {
-					padding: .5em 0;
+					padding: 1em 0;
 					display: flex;
 					align-items: center;
 
 					img {
-						display: none;
-						height: 3em;
-						width: 3em;
+						/* display: none; */
+						height: 1.5em;
+						width: 1.5em;
+						padding-right: .5em;
+					}
+
+					p {
+						transition: 400ms ease-in;
+					}
+
+					&:hover {
+						p {
+							transform: translateX(1em);
+						}
 					}
 				}
 			}

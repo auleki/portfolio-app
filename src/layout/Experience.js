@@ -1,9 +1,11 @@
 import React from 'react';
 import { SectionWrap, Title, SubTitle } from '../components/StyledComponents';
+import iNext from '../assets/fast-forward.svg';
 
 const Experience = () => {
-	const flameIcon =
-		'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615391254/247meals/animat-campfire-color_gcrdyr.gif';
+	// const flameIcon =
+	// 	'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615391254/247meals/animat-campfire-color_gcrdyr.gif';
+	const flameIcon = iNext;
 	return (
 		<SectionWrap>
 			<div className="experience">
@@ -44,10 +46,12 @@ const Experience = () => {
 						<ul className="work-experience">
 							<li>
 								<img src={flameIcon} alt="" srcset="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Designed the UI for all the pages and created a prototype with Figma.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>
 									Utilized React to build the application frontend and used Express on Nodejs to
 									engineer the backend.
@@ -55,18 +59,22 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Configured a server, setup and connected a NOSQL database.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Built hook components which were reused in various parts of the app.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Styled the application with Styled Components library.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>
 									Designed and developed the REST API upon which the client side communicates with the
 									backend.
@@ -74,14 +82,17 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Leveraged Redux Toolkit to manage application’s global state.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Integrated a payment gateway to accept customer payments.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								<ion-icon name="arrow-dropright" />
 								<p>Added a quiz section with user authentication.</p>
 							</li>
 						</ul>
@@ -95,6 +106,7 @@ const Experience = () => {
 						<ul className="work-experience">
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Developed several static pages and web applications for clients using either
 									WordPress or custom code, which was based on the client's choice.
@@ -102,6 +114,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									On-boarded new clients with actionable steps vital in achieving their business needs
 									through us.
@@ -109,6 +122,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Collaborated with the UI designer to implement an exact replica of his designs as
 									code for dynamic web applications or static sites.
@@ -116,6 +130,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Worked in an agile environment where I coordinated with Digital Marketers, Account
 									Managers and other Software Developers.
@@ -130,6 +145,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>Coordinated developments of outsourced projects.</p>
 							</li>
 						</ul>
@@ -143,10 +159,12 @@ const Experience = () => {
 						<ul className="work-experience">
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>Out of 13,000 applicants from Africa, I graduated as one of the 256 finalists.</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Gathered and documented Software Requirements Specifications (SRS) for assigned
 									projects.
@@ -154,6 +172,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Provided technical input during planning, design, scoping, estimating and
 									requirements gathering.
@@ -161,6 +180,7 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Confirmed project requirements by reviewing program objective, input data, and
 									output requirements with analyst, supervisor, and client.
@@ -168,12 +188,14 @@ const Experience = () => {
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Brainstorm, concept, and collaborate with UX Team to come up with style guidelines.
 								</p>
 							</li>
 							<li>
 								<img src={flameIcon} alt="" />
+								{/* <ion-icon name="arrow-dropright" /> */}
 								<p>
 									Provided constructive feedback on colleague's pull while accepting theirs in return.
 								</p>

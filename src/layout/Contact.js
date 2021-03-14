@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Paragraph, SectionWrap, SubTitle, Title } from '../components/StyledComponents';
+import iLinkedIn from '../assets/linkedin.svg';
+import iTwitter from '../assets/twitter.svg';
+import iWhatsApp from '../assets/whatsapp.svg';
+import iInstagram from '../assets/instagram.svg';
+import iGithub from '../assets/github-sign.svg';
+import iEnvelope from '../assets/envelope.svg';
 
 const Contact = () => {
 	const [ fName, setFName ] = useState('');
@@ -25,7 +31,7 @@ const Contact = () => {
 				<div className="contactSection">
 					<div className="form">
 						<Paragraph size={1.3} white marginY="1em">
-							Feel free to leave me a message
+							Feel free to leave a message, I'll respond ASAP
 						</Paragraph>
 						<form onSubmit={activateHermes}>
 							<div className="row">
@@ -83,9 +89,44 @@ const Contact = () => {
 							Reach me on any of the following platforms
 						</Paragraph>
 						<div className="links">
-							<Paragraph>TWITTER</Paragraph>
-							<Paragraph>EMAIL</Paragraph>
-							<Paragraph>LINKEDIN</Paragraph>
+							<section>
+								<a href="http://linkedin.com/in/aukoda" target="_blank" rel="noreferrer noopener">
+									<img src={iLinkedIn} alt="" />
+									<SubTitle>LinkedIN</SubTitle>
+								</a>
+							</section>
+							<section>
+								<a href="http://twitter.com/emmagiwa_" target="_blank" rel="noreferrer noopener">
+									<img src={iTwitter} alt="" />
+									<SubTitle>Twitter</SubTitle>
+								</a>
+							</section>
+							<section>
+								<a href="http://twitter.com/emmagiwa_" target="_blank" rel="noreferrer noopener">
+									<img src={iWhatsApp} alt="" />
+									<SubTitle>WhatsApp</SubTitle>
+								</a>
+							</section>
+							<section>
+								<a href="http://linkedin.com/in/aukoda" target="_blank" rel="noreferrer noopener">
+									<img src={iEnvelope} alt="" />
+									<SubTitle>Email</SubTitle>
+								</a>
+							</section>
+							<section>
+								<a href="http://linkedin.com/in/aukoda" target="_blank" rel="noreferrer noopener">
+									<img src={iInstagram} alt="" />
+									<SubTitle>Instagram</SubTitle>
+								</a>
+							</section>
+							<section>
+								<a href="http://linkedin.com/in/aukoda" target="_blank" rel="noreferrer noopener">
+									<img src={iGithub} alt="" />
+									<SubTitle>Github</SubTitle>
+								</a>
+							</section>
+							{/* <Paragraph>EMAIL</Paragraph>
+							<Paragraph>LINKEDIN</Paragraph> */}
 						</div>
 					</div>
 				</div>
