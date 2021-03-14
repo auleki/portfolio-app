@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Paragraph, SectionWrap, SubTitle, Title } from '../components/StyledComponents';
 import iLinkedIn from '../assets/linkedin.svg';
 import iTwitter from '../assets/twitter.svg';
@@ -12,10 +12,33 @@ const Contact = () => {
 	const [ lName, setLName ] = useState('');
 	const [ email, setEmail ] = useState('');
 	const [ message, setMessage ] = useState('');
+	const [ canActivate, setCanActivate ] = useState(false);
+
+	useEffect(
+		() => {
+			const checkActivate = () => {
+				if (fName && lName && email && message) {
+					setCanActivate(true);
+				} else {
+					setCanActivate(false);
+				}
+			};
+			checkActivate();
+		},
+		[ fName, lName, email, message ]
+	);
+
+	const resetField = () => {
+		setFName('');
+		setLName('');
+		setEmail('');
+		setMessage('');
+	};
 
 	const activateHermes = async (e) => {
 		e.preventDefault();
 		const load = { fName, lName, email, message };
+		resetField();
 		console.log('Message Sent');
 		console.table(load);
 	};
@@ -39,6 +62,7 @@ const Contact = () => {
 									<label htmlFor="firstName">First Name</label>
 									<input
 										type="text"
+										autoComplete="false"
 										placeholder="John"
 										value={fName}
 										onChange={(e) => setFName(e.target.value)}
@@ -48,6 +72,7 @@ const Contact = () => {
 									<label htmlFor="lastName">Last Name</label>
 									<input
 										type="text"
+										autoComplete="false"
 										placeholder="Doe"
 										value={lName}
 										onChange={(e) => setLName(e.target.value)}
@@ -58,6 +83,7 @@ const Contact = () => {
 								<label htmlFor="email">Email</label>
 								<input
 									type="email"
+									autoComplete="false"
 									placeholder="johndoe@aol.com"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
@@ -69,10 +95,11 @@ const Contact = () => {
 									placeholder="Hi Emmanuel, I'd like to discuss..."
 									rows="5"
 									onChange={(e) => setMessage(e.target.value)}
+									value={message}
 								/>
 							</div>
 							<div className="input_group">
-								<Button size={1}>
+								<Button canActivate={canActivate} size={1}>
 									<span>Send A Message</span>
 									<ion-icon name="chatbubbles" />
 								</Button>

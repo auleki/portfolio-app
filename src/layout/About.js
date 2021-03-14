@@ -1,5 +1,10 @@
 import React from 'react';
 import { Paragraph, Row, SkillCard, SectionWrap, SubTitle, Title } from '../components/StyledComponents';
+import { Link } from 'react-router-dom';
+import iNodeJs from '../assets/nodejs.svg';
+import iReact from '../assets/react-icon.svg';
+import iMobile from '../assets/flutter.svg';
+import iNinja from '../assets/ninja.svg';
 
 const About = () => {
 	return (
@@ -15,21 +20,46 @@ const About = () => {
 						<SkillCard>
 							<div className="row">
 								<SubTitle secondary>Frontend Projects</SubTitle>
-								<ion-icon name="phone-portrait" />
+								<img src={iReact} alt="" srcset="" />
 							</div>
-							<Paragraph white>6 Projects</Paragraph>
+							<Link to="/projects">
+								{/* <Paragraph white> */}
+								6 Projects
+								{/* </Paragraph> */}
+							</Link>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>Backend Projects</SubTitle>
-							<Paragraph white>25 Projects</Paragraph>
+							<div className="row">
+								<SubTitle secondary>Backend Projects</SubTitle>
+								<img src={iNodeJs} alt="" srcset="" />
+							</div>
+							<Link to="/projects">
+								{/* <Paragraph white> */}
+								25 Projects
+								{/* </Paragraph> */}
+							</Link>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>Fullstack Projects</SubTitle>
-							<Paragraph white>3 Projects</Paragraph>
+							<div className="row">
+								<SubTitle secondary>Fullstack Projects</SubTitle>
+								<img src={iNinja} alt="" srcset="" />
+							</div>
+							<Link to="/projects">
+								{/* <Paragraph white> */}
+								3 Projects
+								{/* </Paragraph> */}
+							</Link>
 						</SkillCard>
 						<SkillCard>
-							<SubTitle secondary>Mobile Projects</SubTitle>
-							<Paragraph white>3 Projects</Paragraph>
+							<div className="row">
+								<SubTitle secondary>Mobile Projects</SubTitle>
+								<img src={iMobile} alt="" />
+							</div>
+							<Link to="/projects">
+								{/* <Paragraph white> */}
+								3 Projects
+								{/* </Paragraph> */}
+							</Link>
 						</SkillCard>
 					</div>
 					<div className="bio">

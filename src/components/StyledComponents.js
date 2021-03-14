@@ -176,14 +176,18 @@ export const SkillCard = styled.div`
 		padding: 1em 2em;
 		transition: 400ms ease-in;
 		border-right: solid transparent .2em;
-	
-		&:hover {
-			cursor: pointer;
-			transform: scale(1.02);
-			border-right: solid ${colors.lightGreen} .2em;
-			box-shadow: 0px 19px 50px -22px rgba(20,20,20,0.86);
+
+		a {
+			text-decoration: none;
+			border-bottom: .1em solid transparent;
+			transition: 200ms ease-in;
+			color: ${colors.cream};
 		}
-	
+/* 	
+		&:hover {
+			
+		}
+	 */
 		&:nth-child(2) {
 			/* background-color: ${colors.cream}; */
 			&:hover {
@@ -220,7 +224,28 @@ export const SkillCard = styled.div`
 				border-right: solid ${colors.cream} .2em;
 			}
 		}
+
+		img {
+			height: auto;
+			width: 3em;
+			transition: transform 300ms ease-in;
+		}
 		
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.02);
+			border-right: solid ${colors.lightGreen} .2em;
+			box-shadow: 0px 19px 50px -22px rgba(20,20,20,0.86);
+			img {
+				transform: rotate(15deg);
+			}
+			
+			a {
+				padding: .5em;
+				color: ${colors.lightGreen};
+				border-bottom: .1em solid ${colors.white}; 
+			}
+		}
 
 	`;
 
@@ -747,7 +772,7 @@ const TextButtonColor = theme('mode', {
 });
 
 export const Button = styled.button(
-	({ primary, size, color, alternate, bgColor }) => `
+	({ primary, size, color, alternate, bgColor, canActivate }) => `
 		padding: 1em 2em;
 		background: ${primary ? colors.dark : alternate ? colors.lightGreen : colors.cream};
 		transition: background 150ms ease-in, 
@@ -755,9 +780,11 @@ export const Button = styled.button(
 		display: flex;
 		align-items: center;
 		font-weight: 600;
+		/* border: .1em solid transparent; */
 		font-size: ${size || 0.8}em;
 		letter-spacing: .1em;
 		border-right: .5em solid ${colors.red};
+		border-left: .5em solid transparent;
 		font-family: ${fonts.secondary};
 		border-top-right-radius: .3em;
 		border-bottom-right-radius: .3em;
@@ -771,7 +798,7 @@ export const Button = styled.button(
 			position: relative;
 		}
 		
-		&:hover {
+		&:hover, &:focus {
 			background: ${primary ? colors.red : colors.dark};
 			color: ${primary ? colors.darkCream : colors.cream};
 			border-right: .5em solid ${colors.white};
@@ -781,6 +808,10 @@ export const Button = styled.button(
 				opacity: 1;
 				transform: translateX(.2em);
 			}
+		}
+
+		&:focus, &:hover {
+			border-left: .5em solid ${canActivate ? colors.lightGreen : colors.red};
 		}
 	`
 );
