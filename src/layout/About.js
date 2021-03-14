@@ -13,7 +13,10 @@ const About = () => {
 				<div className="aboutSection">
 					<div className="projectCards">
 						<SkillCard>
-							<SubTitle secondary>Frontend Projects</SubTitle>
+							<div className="row">
+								<SubTitle secondary>Frontend Projects</SubTitle>
+								<ion-icon name="phone-portrait" />
+							</div>
 							<Paragraph white>6 Projects</Paragraph>
 						</SkillCard>
 						<SkillCard>

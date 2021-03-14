@@ -332,6 +332,7 @@ export const SectionWrap = styled.div(
 							border-bottom: .1em solid transparent;
 							margin: .5em 0 0;
 							padding: .5em 0;
+							
 							transition: 200ms ease-in;
 						}
 						
@@ -350,7 +351,7 @@ export const SectionWrap = styled.div(
 							}
 
 							h2 {
-								color: ${colors.darkCream};
+								color: ${colors.gray};
 								margin: .5em 0 0;
 								
 								border-bottom: .1em solid ${colors.red};
@@ -359,7 +360,6 @@ export const SectionWrap = styled.div(
 
 						}
 					}
-					
 				}
 			}
 		}
@@ -515,8 +515,9 @@ export const SectionWrap = styled.div(
 				list-style-type: none;
 
 				li {
-					padding: 1em 0;
+					padding: 1em;
 					display: flex;
+					border-radius: .3em;
 					align-items: center;
 
 					img {
@@ -527,10 +528,11 @@ export const SectionWrap = styled.div(
 					}
 
 					p {
-						transition: 400ms ease-in;
+						transition: 250ms ease-in;
 					}
 
 					&:hover {
+						background: ${colors.hardDark};
 						p {
 							transform: translateX(1em);
 						}
