@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Paragraph, SectionWrap, SubTitle, Title } from '../components/StyledComponents';
+import { Button, Paragraph, SectionWrap, SubTitle, Title, DotIndicator } from '../components/StyledComponents';
 import iLinkedIn from '../assets/linkedin.svg';
 import iTwitter from '../assets/twitter.svg';
 import iWhatsApp from '../assets/whatsapp.svg';
@@ -57,6 +57,13 @@ const Contact = () => {
 							Feel free to leave a message, I'll respond ASAP
 						</Paragraph>
 						<form onSubmit={activateHermes}>
+							<div className="indicatorArea">
+								<DotIndicator canActivate={canActivate} />
+								<Paragraph>
+									{canActivate ? 'All fields are a go, send your message' : 'Fill all fields'}
+								</Paragraph>
+							</div>
+
 							<div className="row">
 								<div className="input_group">
 									<label htmlFor="firstName">First Name</label>

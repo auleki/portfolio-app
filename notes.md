@@ -9,3 +9,4 @@
 - add a switch for either email or phone number, based on the user's choice
 -for experience make each list item react to engagement..maybe shift the icon attached a little, make test bolder or whatver needs to be done 
 - add an overboard form indicator for when the form is ready to go 
+- for header icons use styles two images, make sure the first can rotateZ180 to reveal the second icon beneath it 

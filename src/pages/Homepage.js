@@ -18,7 +18,7 @@ const Homepage = () => {
 		<ThemeProvider theme={{ mode: 'dark' }}>
 			<PageWrap>
 				<Header />
-				<ThemeSwitchButton onClick={() => setBright(!bright)}>{!bright ? 'DARK' : 'LIGHT'}</ThemeSwitchButton>
+				{/* <ThemeSwitchButton onClick={() => setBright(!bright)}>{!bright ? 'DARK' : 'LIGHT'}</ThemeSwitchButton> */}
 				<About />
 				<Experience />
 				<RecentProjects />

@@ -65,10 +65,30 @@ export const PageWrap = styled.div`
 	width: 100%;
 	background: ${PageColor};
 	font-family: ${fonts.main};
+
+	&::-webkit-scrollbar {
+		width: .1em;
+		border-radius: 15px;
+		height: .3em;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: ${colors.hardDark};
+		border-radius: 15px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: ${colors.darkCream};
+		border-radius: 20px;
+		width: 4px;
+	}
 `;
 export const HeaderWrap = styled.div`
 	height: 100vh;
-	background: ${HeaderColor};
+	background: linear-gradient(to right, #24242499, #1a1a1a99), url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615936258/glitch_kwrau2.png') center fixed repeat;
+	/* background: ${HeaderColor}; */
+	background-size: cover;
+	/* background: url(); */
 	color: ${HeaderTextColor};
 	display: flex;
 	align-items: center;
@@ -79,10 +99,37 @@ export const HeaderWrap = styled.div`
 
 		.headerSocialLinks {
 			display: flex;
-			a {
-				color: ${colors.white};
+			margin: 1em 0;
+			.socialLink {
+				margin-right: 1em;
+				padding: 1em;
+				border-radius: .3em;
 
+					a {
+					color: ${colors.white};
+					padding: 1em 0;
+					text-decoration: none;
+					transition: 200ms ease-in;
+				}
+
+				img {
+					height: auto;
+					width: 5em;
+					transition: 500ms ease-in;
+				}
+
+				&:hover {
+					background: ${colors.hardDark};
+					img {
+						transform: rotateZ(360deg);
+					}
+					a {
+						text-decoration: underline;
+					}
+				}
 			}
+
+		
 		}
 	}
 
@@ -96,8 +143,8 @@ export const HeaderWrap = styled.div`
 			transition: border 400ms ease-in, transform 200ms ease-in;
 
 			&:hover {
-				transform: scale(1.4) translateY(-2em);
-
+				transform: scale(1.1) translateY(-1em);
+				
 				/* border: .5em dashed ${c2}; */
 			}
 		}
@@ -145,22 +192,77 @@ export const Row = styled.div(
 			// background: ${colors.white};
 
 			.skills {
-				
+				position: relative;
 			}
 		}
 
 		.aboutSection {
+			margin-top: 2em;
 			display: flex;
-			// align-items: center;
+			align-items: center;
 			padding: 4em 0;
 			justify-content: center;
 			width: 100%;
 			height: 100vh;
 		}
 
+		@media (min-width: 320px) and (max-width: 1104px) {
+			.aboutSection {
+				flex-direction: column-reverse;
+				display: flex;
+				height: 100%;
+
+				.projectCards {
+					/* background: ${colors.darkGreen}; */
+					margin-top: 2em;
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-evenly;
+
+				}
+				
+				.bio {
+					margin-bottom: 2em;
+					margin-left: 0;
+					padding: 0 2em;	
+					width: 100%;
+				}
+			}
+
+		}
+
+		@media (max-width: 514px) {
+
+			.projectCards {
+				padding: 0 2em;
+				/* background: ${colors.red}; */
+			}
+			
+			.bio {
+				text-align: center;
+			}
+			.quote {
+				margin-bottom: 1em;
+			}			
+			.mobileBlock {
+				display: block;
+				margin-top: 1em;
+			}
+		}
+
+
 		.projectCards {
 			// background: ${colors.red};
 		}
+
+		/* &:hover {
+			.section-tip {
+				p {
+					color: ${colors.red};
+				}
+			}
+		} */
 	`
 );
 
@@ -397,10 +499,17 @@ export const SectionWrap = styled.div(
 	}
 
 	.form {
+
+		.indicatorArea {
+			display: flex;
+			/* background: ${colors.lightGreen}; */
+			align-items: center;
+			p {
+				margin-left: .5em;
+				color: ${colors.gray};
+			}
+		}
 		
-		/* p {
-			text-align: center;
-		} */
 	}
 
 	.input_group {
@@ -601,6 +710,97 @@ export const SectionWrap = styled.div(
 			/* grid-template-columns: repeat(2, 4fr); */
 		}
 	}
+	`
+);
+
+export const DotIndicator = styled.div(
+	({ canActivate }) => css`
+		height: .5em;
+		display: inline-flex;
+		width: .5em;
+		background: ${canActivate ? colors.lightGreen : colors.red};
+		border-radius: 100%;
+	`
+);
+
+export const SkillsSection = styled.div(
+	({ paddingY, paddingX }) => css`
+		background: ${colors.dark};
+		padding: 2em 0;
+		justify-content: space-between;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		/* position: relative; */
+		display: grid;
+		grid-template-columns: repeat(10, 10em);
+
+		&::-webkit-scrollbar {
+			width: .1em;
+			border-radius: 15px;
+			height: .3em;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: ${colors.hardDark};
+			border-radius: 15px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: ${colors.darkCream};
+			border-radius: 20px;
+			/* height: 4px;
+			width: 4px; */
+		}
+
+		.section-tip {
+			position: absolute;
+			bottom: 5%;
+			transition: 250ms ease-in;
+			right: 0;
+
+			p {
+				margin-right: .5em;
+				transition: 300ms ease-out;
+				font-size: .8em;
+			}
+		}
+
+		.skill {
+			padding: 1em;
+			text-align: center;
+			width: 100%;
+			transition: 300ms ease-in;
+			img {
+				height: 3em;
+				object-fit: cover;
+				width: 3em;
+				margin-bottom: .3em;
+			}
+
+			h2 {
+				visibility: hidden;
+				transition: 200ms ease-in;
+			}
+
+			&:hover {
+				background: ${colors.hardDark};
+				cursor: pointer;
+				transform: scale(1.1) translateX(.5em);
+				h2 {
+					visibility: visible;
+				}
+			}
+		}
+
+		&:hover {
+			.section-tip {
+				color: ${colors.gray};
+				p {
+					color: ${colors.gray};
+					margin-right: .1em;
+				}
+			}
+		}
 	`
 );
 

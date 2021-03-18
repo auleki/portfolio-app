@@ -5,7 +5,12 @@ $c2: #A7C957
 $c3: #6A994E
 $c4: #386641
 $c5: #BC4749
-
+$c6:#F9F8F8
+$c7:#0B8BFF
+$c8:#E9DFC7
+$c9:#737373
+$c10:#242424
+$c11:#1a1a1a
 
 
 * 
@@ -16,6 +21,22 @@ $c5: #BC4749
   outline: 0 
   -webkit-tap-highlight-color: transparent
 
+body 
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    width: .4em 
+    background: $c11
+    // border-radius: 15px
+  &::-webkit-scrollbar-track 
+    background: $c11
+    border-radius: 15px
+  &::-webkit-scrollbar-thumb 
+    // background: $c2
+    background: #DCE35B
+    background: -webkit-linear-gradient(to left, #45B649, #DCE35B)
+    background: linear-gradient(to left, #45B649, #DCE35B)
+    border-radius: 20px
+		
 /* 
 
   UTILITY CLASSES
@@ -39,3 +60,4 @@ $c5: #BC4749
 .row 
   display: flex 
   justify-content: space-between
+

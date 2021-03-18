@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, HeaderWrap, PageWrap, Paragraph, Row, SubTitle, Title } from '../components/StyledComponents';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github';
@@ -14,25 +15,70 @@ const AnimationWrapper = ({ icon }) => {
 
 const Header = () => {
 	const avatarImg =
-		'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YwnRJTWhyIsdh1XDN02JygHaFp%26pid%3DApi&f=1';
+		'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615938112/portfolio/wlq63cWy_400x400_nxotw0.jpg';
 
 	return (
 		<HeaderWrap>
 			<div className="content">
-				<div className="avatar">
+				<motion.div
+					className="avatar"
+					initial={{ opacity: 0.4 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 2, ease: 'easeInOut' }}
+				>
 					<img src={avatarImg} alt="avatar" />
-				</div>
-				<div className="title">
-					<Title crazyFont>Emmanuel B. Giwa</Title>
+				</motion.div>
+				<motion.div
+					className="title"
+					initial={{ x: 100 }}
+					animate={{ x: 0 }}
+					transition={{ ease: 'easeOut', duration: 2, type: 'spring', stiffness: 1000 }}
+				>
+					<Title marginY=".5em" crazyFont>
+						Emmanuel B. Giwa
+					</Title>
 					<SubTitle>Fullstack Developer</SubTitle>
-				</div>
+				</motion.div>
 				<Row justifyContent="center">
 					{/* <a href="https://github.com/auleki" target="_blank" rel="noreferrer noopener"> */}
 					{/* <Paragraph white>Twitter</Paragraph> */}
-					<div className="headerSocialLinks">
-						{/* <AnimationWrapper icon="github" /> */}
-						{/* <UseAnimations animationKey="bookmark" size={56} style={{ cursor: 'pointer', padding: 100 }} /> */}
-					</div>
+					<motion.div
+						className="headerSocialLinks"
+						initial={{ y: '-100vh' }}
+						animate={{ y: 0 }}
+						transition={{ ease: 'easeOut', duration: 1, type: 'spring', stiffness: 50 }}
+					>
+						<div className="socialLink">
+							<a href="http://twitter.com/emmagiwa_" target="_blank" rel="noopener noreferrer">
+								<img
+									src="https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615936679/portfolio/icons8-twitter-256_rjq0us.png"
+									alt=""
+									srcset=""
+								/>
+								<Paragraph white>Twitter</Paragraph>
+							</a>
+						</div>
+						<div className="socialLink">
+							<a href="http://linkedin.com/in/aukoda" target="_blank" rel="noopener noreferrer">
+								<img
+									src="https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615936681/portfolio/icons8-linkedin-256_ievhg9.png"
+									alt=""
+									srcset=""
+								/>
+								<Paragraph white>LinkedIn</Paragraph>
+							</a>
+						</div>
+						<div className="socialLink">
+							<a href="http://github.com/auleki" target="_blank" rel="noopener noreferrer">
+								<img
+									src="https://res.cloudinary.com/dyj6pqx6d/image/upload/v1615936680/portfolio/github_h5u4av.png"
+									alt=""
+									srcset=""
+								/>
+								<Paragraph white>Github</Paragraph>
+							</a>
+						</div>
+					</motion.div>
 				</Row>
 			</div>
 		</HeaderWrap>
