@@ -700,11 +700,12 @@ export const SectionWrap = styled.div(
 		}
 
 		.experience .education {
-			display: block;
+			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 
-	@media (min-width: 320px) and (max-width: 720px) {
+	@media (min-width: 320px) and (max-width: 830px) {
 		.experience .work {
 			display: block;
 			/* grid-template-columns: repeat(2, 4fr); */
