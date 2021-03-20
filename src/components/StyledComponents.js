@@ -351,15 +351,25 @@ export const SkillCard = styled.div`
 
 	`;
 
+const JoyBounceAnim = keyframes`
+		
+`;
+
 export const StyleProjectCard = styled.div`
 	background: ${colors.hardDark};
-	height: 100%;
+	height: 32rem;
 	color: ${c6};
 	transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
 	width: 30em;
 	border-radius: .3em;
 	border-bottom: .3em solid ${colors.cream};
 	padding-bottom: 4em;
+
+	.repoView {
+		color: ${colors.white};
+		display: flex;
+		align-items: center;
+	}
 
 	&:hover {
 		border-bottom: .3em solid ${colors.green};
@@ -372,16 +382,52 @@ export const StyleProjectCard = styled.div`
 		img {
 			height: auto;
 			width: 100%;
+			object-fit: cover;
 		}
 	}
 
 	.info {
 		padding: 1em 1em;
+
+		h2 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		p {
+			line-height: 2em;
+		}
 	}
 
 	.actions {
 		display: flex;
 		justify-content: space-between;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 560px) {
+		height: 100%;
+		padding-bottom: 1em;
+		.actions {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			a,
+			button {
+				width: 100%;
+			}
+
+			button {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 1em;
+			}
+		}
 	}
 `;
 
@@ -541,16 +587,59 @@ export const SectionWrap = styled.div(
 		}
 	}
 
+	@media (min-width: 320px) and (max-width: 1134px) {
+		.contact {
+			.form .row {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 1134px) {
+		.contact {
+			.contactSection {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+
+
+
 	.recentProjects {
 			padding: 0 2em;
 			width: 100%;
+			
 			.projects {
-				display: grid;
+				/* display: grid; */
+				overflow-x: hidden;
+				display: flex;
+				justify-content: space-evenly;
+				flex-wrap: wrap; 
 				grid-template-columns: repeat(3, 2fr);
+				padding: 0 0 1.5em 0;
 				grid-gap: 2em;
 				grid-row-gap: 5em;
+				&::-webkit-scrollbar {
+				width: .1em;
+				border-radius: 15px;
+				height: .3em;
+		}
+/* 
+		&::-webkit-scrollbar-track {
+			background: ${colors.hardDark};
+			border-radius: 15px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: ${colors.red};
+			border-radius: 20px;
+		} */
 			}
 		}
+
+		/* @media (min-width: 320px) and (max-width: ) */
 
 	.experience {
 
@@ -709,6 +798,15 @@ export const SectionWrap = styled.div(
 		.experience .work {
 			display: block;
 			/* grid-template-columns: repeat(2, 4fr); */
+		}
+	}
+
+		@media (min-width: 320px) and (max-width: 1134px) {
+		.contact {
+			.contactSection {
+				display: flex;
+				flex-direction: column;
+			}
 		}
 	}
 	`
@@ -1007,8 +1105,29 @@ export const Button = styled.button(
 
 			ion-icon {
 				opacity: 1;
-				transform: translateX(.2em);
+				transform: translateX(.2em) scale(1.5);
+				colors: ${colors.lightGreen};
 			}
+		}
+
+		&:disabled {
+			background: ${colors.red};
+			cursor: not-allowed;
+			border-right: .5em solid ${colors.darkCream};
+			ion-icon {
+				/* transform: rotateZ(30deg); */
+			}
+
+			&:hover {
+				ion-icon {
+					
+				}
+			}
+			/* pointer-events: none; */
+		}
+
+		&:disabled, &:hover {
+			/* transform: rotateZ(30deg); */
 		}
 
 		&:focus, &:hover {
