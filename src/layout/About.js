@@ -50,44 +50,28 @@ const About = () => {
 								<SubTitle secondary>Frontend Projects</SubTitle>
 								<img src={iReact} alt="" srcset="" />
 							</div>
-							<Link to="/projects">
-								{/* <Paragraph white> */}
-								6 Projects
-								{/* </Paragraph> */}
-							</Link>
+							<Link to="/projects">6 Projects</Link>
 						</SkillCard>
 						<SkillCard>
 							<div className="row">
 								<SubTitle secondary>Backend Projects</SubTitle>
 								<img src={iNodeJs} alt="" srcset="" />
 							</div>
-							<Link to="/projects">
-								{/* <Paragraph white> */}
-								25 Projects
-								{/* </Paragraph> */}
-							</Link>
+							<Link to="/projects">25 Projects</Link>
 						</SkillCard>
 						<SkillCard>
 							<div className="row">
 								<SubTitle secondary>Fullstack Projects</SubTitle>
 								<img src={iNinja} alt="" srcset="" />
 							</div>
-							<Link to="/projects">
-								{/* <Paragraph white> */}
-								3 Projects
-								{/* </Paragraph> */}
-							</Link>
+							<Link to="/projects">3 Projects</Link>
 						</SkillCard>
 						<SkillCard>
 							<div className="row">
 								<SubTitle secondary>Mobile Projects</SubTitle>
 								<img src={iMobile} alt="" />
 							</div>
-							<Link to="/projects">
-								{/* <Paragraph white> */}
-								3 Projects
-								{/* </Paragraph> */}
-							</Link>
+							<Link to="/projects">3 Projects</Link>
 						</SkillCard>
 					</motion.div>
 					<motion.div

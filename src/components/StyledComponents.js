@@ -2,29 +2,7 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import theme from 'styled-theming';
 import Header from '../layout/Header';
-let c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
-c1 = '#F2E8CF';
-c2 = '#A7C957';
-c3 = '#6A994E';
-c4 = '#386641';
-c5 = '#BC4749';
-c6 = '#F9F8F8';
-c7 = '#0B8BFF';
-c8 = '#E9DFC7';
-
-const colors = {
-	cream: c1,
-	darkCream: c8,
-	lightGreen: c2,
-	green: c3,
-	darkGreen: c4,
-	blue: c7,
-	red: c5,
-	white: c6,
-	gray: '#737373',
-	dark: '#242424',
-	hardDark: '#1a1a1a'
-};
+import { colors, fonts } from '../utils/constants';
 
 const shockBounce = keyframes`
 	0% {
@@ -39,12 +17,6 @@ const shockBounce = keyframes`
 		transform: translateY(0em);
 	}
 `;
-
-const fonts = {
-	main: 'Inconsolata',
-	secondary: 'Recursive',
-	crazy: 'Carter One'
-};
 
 export const PageColor = theme('mode', {
 	light: colors.white,
@@ -145,7 +117,7 @@ export const HeaderWrap = styled.div`
 			&:hover {
 				transform: scale(1.1) translateY(-1em);
 				
-				/* border: .5em dashed ${c2}; */
+				
 			}
 		}
 	}
@@ -161,11 +133,12 @@ export const Title = styled.h1(
 );
 
 export const Paragraph = styled.p(
-	({ size, color, white, marginX, marginY, center }) => css`
+	({ font, size, color, white, marginX, marginY, center }) => css`
 		font-size: ${size ? size : 1}em;
 		text-align: ${center ? 'center' : 'inherit'};
 		color: ${color ? color : white ? colors.white : colors.hardDark};
 		margin: ${marginY || 0} ${marginX || 0};
+		font-family: ${font || 'inherit'};
 	`
 );
 
@@ -213,13 +186,14 @@ export const Row = styled.div(
 				height: 100%;
 
 				.projectCards {
-					/* background: ${colors.darkGreen}; */
 					margin-top: 2em;
 					width: 100%;
-					display: flex;
+					display: grid;
+					grid-template-columns: 6fr;
 					flex-wrap: wrap;
+					place-items: center;
 					justify-content: space-evenly;
-
+					overflow-x: hidden;
 				}
 				
 				.bio {
@@ -269,9 +243,10 @@ export const Row = styled.div(
 export const SkillCard = styled.div`
 		height: 8em;
 		background-color: ${colors.hardDark};
-		color: ${c6};
+		color: ${colors.white};
 		width: 25em;
 		border-radius: .1em;
+		position: relative;
 		/* border-top-right-radius: 1em; */
 		border-bottom-right-radius: .5em;
 		margin-bottom: .5em;
@@ -350,15 +325,18 @@ export const SkillCard = styled.div`
 		}
 
 	`;
+/* 
+
+THIS IS FOR RECENT PROJECT HOVER
 
 const JoyBounceAnim = keyframes`
 		
-`;
+`; */
 
 export const StyleProjectCard = styled.div`
 	background: ${colors.hardDark};
 	height: 32rem;
-	color: ${c6};
+	color: ${colors.white};
 	transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
 	width: 30em;
 	border-radius: .3em;
@@ -395,7 +373,7 @@ export const StyleProjectCard = styled.div`
 		}
 
 		p {
-			line-height: 2em;
+			line-height: 1.4em;
 		}
 	}
 
@@ -410,7 +388,7 @@ export const StyleProjectCard = styled.div`
 
 	@media (min-width: 320px) and (max-width: 560px) {
 		height: 100%;
-		padding-bottom: 1em;
+		padding-bottom: 0;
 		.actions {
 			display: flex;
 			flex-direction: column;
@@ -425,7 +403,7 @@ export const StyleProjectCard = styled.div`
 			button {
 				display: flex;
 				justify-content: center;
-				margin-bottom: 1em;
+				margin-bottom: 2em;
 			}
 		}
 	}
@@ -440,7 +418,6 @@ export const SectionWrap = styled.div(
 	flex-direction: column;
 	align-items: ${alignItems || 'inherit'};
 	justify-content: ${justifyContent || 'inherit'};
-	/* border-top: .3em solid ${c6}; */
 	background: ${HeaderColor};
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
@@ -643,7 +620,7 @@ export const SectionWrap = styled.div(
 
 	.experience {
 
-		padding: 0 2em;
+		padding: 0 1em;
 		.time {
 			color: ${colors.darkCream};
 		}
@@ -671,7 +648,7 @@ export const SectionWrap = styled.div(
 			/* padding: 0 2em; */
 			section {
 				width: 100%;
-				padding: 2em 1em;
+				padding: 2em 0;
 				background: ${colors.hardDark};
 				transition: 500ms ease-in-out;
 				border-top: .2em solid transparent;
@@ -679,8 +656,40 @@ export const SectionWrap = styled.div(
 				&:nth-child(1), &:nth-child(2) {
 					margin-right: 1em;
 				}
-				.row {
+				.qualification {
 					margin: .5em 0;
+					padding: 0 1em;
+
+					display: flex;
+					flex-direction: column;
+					
+					.timeline, .certificate {
+						display: flex; 
+						justify-content: space-between;
+					}
+
+					.certificate {
+						margin-top: 1em;
+
+						ion-icon {
+							transition: 300ms ease-in;
+						}
+					}
+
+					/* .timeline, .institute {
+						display: flex;
+						flex-direction: column;
+					} */
+
+					/* .timeline {
+
+					}
+
+					.institute {
+						ion-icon {
+							
+						}
+					} */
 				}
 
 				&:hover {
@@ -689,6 +698,12 @@ export const SectionWrap = styled.div(
 					cursor: pointer;
 					border-top-right-radius: .2em;
 					border-top-left-radius: .2em;
+
+					.certificate {
+						ion-icon {
+							transform: scale(1.8);
+						}
+					}
 				}
 			}
 		}
@@ -782,7 +797,7 @@ export const SectionWrap = styled.div(
 		}
 	}
 
-	@media (min-width: 720px) and (max-width: 1044px) {
+	@media (min-width: 320px) and (max-width: 1044px) {
 		.experience .work {
 			display: grid;
 			grid-template-columns: repeat(2, 4fr);
@@ -791,6 +806,11 @@ export const SectionWrap = styled.div(
 		.experience .education {
 			display: flex;
 			flex-wrap: wrap;
+			section {
+				&:nth-child(1), &:nth-child(2) {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 
@@ -807,6 +827,16 @@ export const SectionWrap = styled.div(
 				display: flex;
 				flex-direction: column;
 			}
+		}
+	}
+/* 
+	@media (min-width: 315px) and (max-width: 450px) {
+
+	}
+	 */
+	@media (min-width: 315px) and (max-width: 540px) {
+		.experience .work section {
+			padding: 1em .5em;
 		}
 	}
 	`
@@ -902,8 +932,6 @@ export const SkillsSection = styled.div(
 		}
 	`
 );
-
-// export const SectionWrap = styled.div`
 
 // 	${({ justifyContent, alignContent }) =>
 // 		justifyContent}
@@ -1061,13 +1089,13 @@ export const SkillsSection = styled.div(
 // `;
 
 const ThemeButtonColor = theme('mode', {
-	light: c7,
-	dark: c2
+	light: colors.blue,
+	dark: colors.green
 });
 
 const TextButtonColor = theme('mode', {
-	light: c2,
-	dark: c6
+	light: colors.lightGreen,
+	dark: colors.white
 });
 
 export const Button = styled.button(
@@ -1153,3 +1181,27 @@ export const ThemeSwitchButton = styled.button`
 		opacity: 1;
 	}
 `;
+
+export const FooterStyle = styled.div(
+	({ size }) => css`
+		background: ${colors.darkCream};
+		color: ${colors.red};
+		padding: 2em 1em;
+		margin-top: 2em;
+		text-align: center;
+
+		.text {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	`
+);
+
+export const SpanText = styled.span(
+	({ color, size, marginX, marginY }) => css`
+		color: ${color || colors.white};
+		font-size: ${size || 1}em;
+		margin: ${marginY || 0}em ${marginX || 0}em;
+	`
+);

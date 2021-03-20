@@ -15,25 +15,40 @@ const Experience = () => {
 				</div>
 				<div className="education">
 					<section>
-						<div className="row">
-							<span className="time">June 2011</span>
-							<span className="type">IGCSE</span>
+						<div className="qualification">
+							<div className="timeline">
+								<span className="time">June '11</span>
+								<span className="institute">Jsay Prevarsity</span>
+							</div>
+							<div className="certificate">
+								<span className="type">IGCSE</span>
+								<ion-icon name="school" />
+							</div>
 						</div>
-						<span className="instituite">Jsay Prevarsity</span>
 					</section>
 					<section>
-						<div className="row">
-							<span className="time">June 2017</span>
-							<span className="type">SSCE Certificate</span>
+						<div className="qualification">
+							<div className="timeline">
+								<span className="time">June '17</span>
+								<span className="institute">Excellent Brain High</span>
+							</div>
+							<div className="certificate">
+								<span className="type">SSCE Certificate</span>
+								<ion-icon name="school" />
+							</div>
 						</div>
-						<span className="instituite">Excellent Brain Secondary School</span>
 					</section>
 					<section>
-						<div className="row">
-							<span className="time">July 2019</span>
-							<span className="type">Diploma in Science</span>
+						<div className="qualification">
+							<div className="timeline">
+								<span className="time">July '19</span>
+								<span className="institute">University of Lagos</span>
+							</div>
+							<div className="certificate">
+								<span className="type">Diploma in Science</span>
+								<ion-icon name="school" />
+							</div>
 						</div>
-						<span className="instituite">University of Lagos</span>
 					</section>
 				</div>
 				<div className="work">
