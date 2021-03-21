@@ -53,9 +53,6 @@ const Contact = () => {
 
 				<div className="contactSection">
 					<div className="form">
-						<Paragraph size={1.1} white marginY="1em">
-							Feel free to leave a message, I'll respond ASAP
-						</Paragraph>
 						<form onSubmit={activateHermes}>
 							<div className="indicatorArea">
 								<DotIndicator canActivate={canActivate} />
@@ -119,7 +116,7 @@ const Contact = () => {
 					</div>
 
 					<div className="socialLinks">
-						<Paragraph size={1.1} white marginY="1em">
+						<Paragraph size={1.3} white marginY="1em">
 							Reach me on any of the following platforms
 						</Paragraph>
 						<div className="links">

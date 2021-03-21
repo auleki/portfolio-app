@@ -44,9 +44,9 @@ const Header = () => {
 					{/* <Paragraph white>Twitter</Paragraph> */}
 					<motion.div
 						className="headerSocialLinks"
-						initial={{ y: '-100vh' }}
+						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
-						transition={{ ease: 'easeOut', duration: 1, type: 'spring', stiffness: 50 }}
+						transition={{ ease: 'easeOut', duration: 0.5, type: 'spring', stiffness: 200 }}
 					>
 						<div className="socialLink">
 							<a href="http://twitter.com/emmagiwa_" target="_blank" rel="noopener noreferrer">

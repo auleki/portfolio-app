@@ -15,17 +15,10 @@ const Homepage = () => {
 	// const themeState = bright ? 'dark' : 'light';
 
 	return (
-		<ThemeProvider theme={{ mode: 'dark' }}>
-			<PageWrap>
-				<Header />
-				{/* <ThemeSwitchButton onClick={() => setBright(!bright)}>{!bright ? 'DARK' : 'LIGHT'}</ThemeSwitchButton> */}
-				<About />
-				{/* <Experience /> */}
-				{/* <RecentProjects /> */}
-				{/* <Contact /> */}
-				<Footer />
-			</PageWrap>
-		</ThemeProvider>
+		<PageWrap>
+			<Header />
+			{/* <Footer /> */}
+		</PageWrap>
 	);
 };
 

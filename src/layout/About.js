@@ -1,5 +1,14 @@
 import React from 'react';
-import { Paragraph, Row, SkillCard, SectionWrap, SubTitle, Title, SkillsSection } from '../components/StyledComponents';
+import {
+	Paragraph,
+	Row,
+	SkillCard,
+	SectionWrap,
+	SubTitle,
+	Title,
+	SkillsSection,
+	PageWrap
+} from '../components/StyledComponents';
 import { Link } from 'react-router-dom';
 import iNodeJs from '../assets/nodejs.svg';
 import iReact from '../assets/react-icon.svg';
@@ -23,6 +32,7 @@ const About = () => {
 	};
 
 	return (
+		// <PageWrap>
 		<SectionWrap>
 			{/* <Title>About Page</Title> */}
 			{/* <div className="sectionTitle ml-2">
@@ -156,6 +166,7 @@ const About = () => {
 				</div>
 			</Row>
 		</SectionWrap>
+		// </PageWrap>
 	);
 };
 

@@ -86,12 +86,12 @@ const RecentProjects = () => {
 	};
 
 	return (
-		<SectionWrap justifyContent="center" alignItems="center">
+		<SectionWrap>
 			{/* UNDER STYLEPROJECTCARD  */}
 			<div className="recentProjects">
 				<div className="sectionTitle">
 					<div className="dash" />
-					<SubTitle size={3}>Recent Projects</SubTitle>
+					<SubTitle size={3}>Projects</SubTitle>
 				</div>
 				<div className="projects">
 					{recentProjects.map((project, index) => <ProjectCard project={project} />)}
@@ -102,34 +102,3 @@ const RecentProjects = () => {
 };
 
 export default RecentProjects;
-
-// <Splide
-// 						options={{
-// 							rewind: true,
-// 							perPage: 1,
-// 							perMove: 1,
-// 							gap: '1rem'
-// 						}}
-// 						onMoved={(splide, newIndex) => {
-// 							console.log('moved', newIndex);
-// 						}}
-// 					>
-// 						<SplideSlide>
-// 							{/* <ProjectCard /> */}
-// 							<div className="box" style={boxStyle}>
-// 								<h2>GROW</h2>
-// 							</div>
-// 						</SplideSlide>
-// 						<SplideSlide>
-// 							{/* <ProjectCard /> */}
-// 							<div className="box" style={boxStyle}>
-// 								<h2>GROW</h2>
-// 							</div>
-// 						</SplideSlide>
-// 						<SplideSlide>
-// 							{/* <ProjectCard /> */}
-// 							<div className="box" style={boxStyle}>
-// 								<h2>GROW</h2>
-// 							</div>
-// 						</SplideSlide>
-// 					</Splide>
