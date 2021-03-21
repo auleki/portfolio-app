@@ -20,9 +20,9 @@ const Homepage = () => {
 				<Header />
 				{/* <ThemeSwitchButton onClick={() => setBright(!bright)}>{!bright ? 'DARK' : 'LIGHT'}</ThemeSwitchButton> */}
 				<About />
-				<Experience />
-				<RecentProjects />
-				<Contact />
+				{/* <Experience /> */}
+				{/* <RecentProjects /> */}
+				{/* <Contact /> */}
 				<Footer />
 			</PageWrap>
 		</ThemeProvider>

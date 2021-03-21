@@ -22,7 +22,7 @@ export const colors = {
 	hardDark: '#1a1a1a'
 };
 
-export const projects = [
+export const recentProjects = [
 	{
 		imageUrl: 'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
 		title: 'Covid 19 Tracker',
@@ -48,6 +48,98 @@ export const projects = [
 		// githubLink: 'https://github.com/auleki/tracking-covid-19',
 		liveUrl: 'https://finpayng.com',
 		client: true
+	}
+];
+
+export const projectData = [
+	{
+		section: 'Frontend',
+		projects: [
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			},
+			{
+				title: 'Covid 19 Tracker',
+				description:
+					'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+				clientOwned: false,
+				technologies: [ 'ChartJS' ],
+				stack: [ 'REACT' ],
+				imgUrl:
+					'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
+				githubLink: 'https://github.com/auleki/tracking-covid-19',
+				liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+			}
+		]
 	}
 ];
 

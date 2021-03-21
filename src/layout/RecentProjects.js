@@ -5,7 +5,7 @@ import GridExampleImgPath from '../assets/grid-example.jpg';
 import Covid19ImgPath from '../assets/covid-19-tracker.jpg';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-import { projects, fonts } from '../utils/constants';
+import { recentProjects, fonts } from '../utils/constants';
 
 const ProjectCard = ({ project }) => {
 	return (
@@ -93,7 +93,9 @@ const RecentProjects = () => {
 					<div className="dash" />
 					<SubTitle size={3}>Recent Projects</SubTitle>
 				</div>
-				<div className="projects">{projects.map((project, index) => <ProjectCard project={project} />)}</div>
+				<div className="projects">
+					{recentProjects.map((project, index) => <ProjectCard project={project} />)}
+				</div>
 			</div>
 		</SectionWrap>
 	);
