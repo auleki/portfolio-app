@@ -9,13 +9,13 @@ const Projects = () => {
 		color: 'white'
 	};
 
-	const buttonStyle = {
-		padding: '1em 2em',
-		background: 'white',
-		color: 'black',
-		fontSize: '1em',
-		border: '.2em solid #09eeee'
-	};
+	// const buttonStyle = {
+	// 	padding: '1em 2em',
+	// 	background: 'white',
+	// 	color: 'black',
+	// 	fontSize: '1em',
+	// 	border: '.2em solid #09eeee'
+	// };
 
 	const prevName = useRef('');
 

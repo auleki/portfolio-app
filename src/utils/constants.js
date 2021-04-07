@@ -1,4 +1,4 @@
-let c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
+let c1, c2, c3, c4, c5, c6, c7, c8;
 c1 = '#F2E8CF';
 c2 = '#A7C957';
 c3 = '#6A994E';

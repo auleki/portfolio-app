@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 import { NavStyle } from './StyledComponents';
 
-const Navbar = () => {
+const Navbar = ({ open, setOpen }) => {
+	const closeMenu = () => {
+		setOpen(false);
+	};
+
 	return (
-		<NavStyle>
+		<NavStyle open={open}>
+			<div className="close" onClick={closeMenu}>
+				<ion-icon name="close-circle-outline" />
+			</div>
+
 			<ul className="navigation">
 				<Link to="/">
 					<li>

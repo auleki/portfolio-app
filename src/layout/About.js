@@ -6,15 +6,15 @@ import {
 	SectionWrap,
 	SubTitle,
 	Title,
-	SkillsSection,
-	PageWrap
+	SkillsSection
+	// PageWrap
 } from '../components/StyledComponents';
 import { Link } from 'react-router-dom';
 import iNodeJs from '../assets/nodejs.svg';
 import iReact from '../assets/react-icon.svg';
 import iMobile from '../assets/flutter.svg';
 import iNinja from '../assets/ninja.svg';
-import lReact from '../assets/react-logo.svg';
+// import lReact from '../assets/react-logo.svg';
 import lCSS from '../assets/css3.svg';
 import lGithub from '../assets/github-sign.svg';
 import lJS from '../assets/js-logo.png';
@@ -26,10 +26,10 @@ import lGraphql from '../assets/graphql.svg';
 import { motion } from 'framer-motion';
 
 const About = () => {
-	const variants = {
-		hidden: { x: -100 },
-		visible: { x: 0 }
-	};
+	// const variants = {
+	// 	hidden: { x: -100 },
+	// 	visible: { x: 0 }
+	// };
 
 	return (
 		// <PageWrap>

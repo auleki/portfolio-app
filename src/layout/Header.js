@@ -1,17 +1,17 @@
 import React from 'react';
-import { Button, HeaderWrap, PageWrap, Paragraph, Row, SubTitle, Title } from '../components/StyledComponents';
-import { Link } from 'react-router-dom';
+import { HeaderWrap, Paragraph, Row, SubTitle, Title } from '../components/StyledComponents';
+// import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import UseAnimations from 'react-useanimations';
+// import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github';
 // import linkedin from 'react-useanimations/lib/linkedin';
 // import twitter from 'react-useanimations/lib/twitter';
 
-const AnimationWrapper = ({ icon }) => {
-	// console.log(animationProps);
-	return <UseAnimations animationKey={icon} size={60} />;
-};
+// const AnimationWrapper = ({ icon }) => {
+// 	// console.log(animationProps);
+// 	return <UseAnimations animationKey={icon} size={60} />;
+// };
 
 const Header = () => {
 	const avatarImg =

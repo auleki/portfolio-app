@@ -6,10 +6,10 @@ import Experience from '../layout/Experience';
 import RecentProjects from '../layout/RecentProjects';
 import Homepage from '../pages/Homepage';
 import NotFound from '../pages/NotFound';
-import { AppStyle } from './StyledComponents';
-import Projects from '../pages/Projects';
-import Footer from './Footer';
-import Navbar from './Navbar';
+// import { AppStyle } from './StyledComponents';
+// import Projects from '../pages/Projects';
+// import Footer from './Footer';
+// import Navbar from './Navbar';
 const PageRoutes = () => {
 	return (
 		<Switch>
