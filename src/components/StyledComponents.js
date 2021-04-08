@@ -43,6 +43,7 @@ export const PageWrap = styled.div`
   width: 100%;
   background: ${PageColor};
   font-family: ${fonts.main};
+  /* padding: 0 ; */
 
   &::-webkit-scrollbar {
     width: 0.1em;
@@ -438,7 +439,7 @@ export const StyleProjectCard = styled.div`
 
 export const SectionWrap = styled.div(
   ({ alignItems, justifyContent }) => css`
-	padding: 1em 0;
+	padding: 1em 0em;
 	min-height: 100vh;
 	overflow-y: scroll;
 	display: flex;
@@ -446,7 +447,9 @@ export const SectionWrap = styled.div(
 	flex-direction: column;
 	align-items: ${alignItems || 'inherit'};
 	justify-content: ${justifyContent || 'inherit'};
-	background: ${HeaderColor};
+	/* background: ${HeaderColor}; */
+	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
+	background-attachment: fixed;
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
 
@@ -989,73 +992,78 @@ const TextButtonColor = theme('mode', {
 })
 
 export const Button = styled.button(
-  ({ primary, size, color, alternate, bgColor, canActivate }) => `
-		padding: 1em 2em;
-		background: ${
-      primary ? colors.dark : alternate ? colors.lightGreen : colors.cream
-    };
-		transition: background 150ms ease-in, 
-		border-right 500ms ease-in;
-		display: flex;
-		align-items: center;
-		font-weight: 600;
-		/* border: .1em solid transparent; */
-		font-size: ${size || 0.8}em;
-		letter-spacing: .1em;
-		border-right: .5em solid ${colors.red};
-		border-left: .5em solid transparent;
-		font-family: ${fonts.secondary};
-		border-top-right-radius: .3em;
-		border-bottom-right-radius: .3em;
-		color: ${
-      primary ? colors.darkCream : alternate ? colors.white : colors.hardDark
-    };
+  ({ primary, size, color, alternate, bgColor, canActivate }) => css`
+    padding: 1em 2em;
+    background: ${primary
+      ? colors.dark
+      : alternate
+      ? colors.lightGreen
+      : colors.cream};
+    transition: background 150ms ease-in, border-right 500ms ease-in;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    /* border: .1em solid transparent; */
+    font-size: ${size || 0.8}em;
+    letter-spacing: 0.1em;
+    border-right: 0.5em solid ${colors.red};
+    border-left: 0.5em solid transparent;
+    font-family: ${fonts.secondary};
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    color: ${primary
+      ? colors.darkCream
+      : alternate
+      ? colors.white
+      : colors.hardDark};
 
-		ion-icon {
-			font-size: 1.5em;
-			margin-left: .5em;
-			transition: 400ms ease-out, transform 300ms ease-out;
-			opacity: 0.3;
-			position: relative;
-		}
-		
-		&:hover, &:focus {
-			background: ${primary ? colors.red : colors.dark};
-			color: ${primary ? colors.darkCream : colors.cream};
-			border-right: .5em solid ${colors.white};
-			cursor: pointer;
+    ion-icon {
+      font-size: 1.5em;
+      margin-left: 0.5em;
+      transition: 400ms ease-out, transform 300ms ease-out;
+      opacity: 0.3;
+      position: relative;
+    }
 
-			ion-icon {
-				opacity: 1;
-				transform: translateX(.2em) scale(1.5);
-				colors: ${colors.lightGreen};
-			}
-		}
+    &:hover,
+    &:focus {
+      background: ${primary ? colors.red : colors.dark};
+      color: ${primary ? colors.darkCream : colors.cream};
+      border-right: 0.5em solid ${colors.white};
+      cursor: pointer;
 
-		&:disabled {
-			background: ${colors.red};
-			cursor: not-allowed;
-			border-right: .5em solid ${colors.darkCream};
-			ion-icon {
-				/* transform: rotateZ(30deg); */
-			}
+      ion-icon {
+        opacity: 1;
+        transform: translateX(0.2em) scale(1.5);
+        colors: ${colors.lightGreen};
+      }
+    }
 
-			&:hover {
-				ion-icon {
-					
-				}
-			}
-			/* pointer-events: none; */
-		}
+    &:disabled {
+      background: ${colors.red};
+      cursor: not-allowed;
+      border-right: 0.5em solid ${colors.darkCream};
+      ion-icon {
+        /* transform: rotateZ(30deg); */
+      }
 
-		&:disabled, &:hover {
-			/* transform: rotateZ(30deg); */
-		}
+      &:hover {
+        ion-icon {
+        }
+      }
+      /* pointer-events: none; */
+    }
 
-		&:focus, &:hover {
-			border-left: .5em solid ${canActivate ? colors.lightGreen : colors.red};
-		}
-	`
+    &:disabled,
+    &:hover {
+      /* transform: rotateZ(30deg); */
+    }
+
+    &:focus,
+    &:hover {
+      border-left: 0.5em solid ${canActivate ? colors.lightGreen : colors.red};
+    }
+  `
 )
 
 export const ThemeSwitchButton = styled.button`

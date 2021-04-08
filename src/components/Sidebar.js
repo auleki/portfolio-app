@@ -2,10 +2,10 @@ import { RiMenu2Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { SidebarStyle } from './StyledComponents'
 
-const Sidebar = ({ visible }) => {
+const Sidebar = ({ visible, setOpen }) => {
   return (
     <SidebarStyle className={visible ? 'sidenav active' : 'sidenav'}>
-      <ul className='navigation'>
+      <ul className='navigation' onClick={() => setOpen(false)}>
         <Link to='/'>
           <li>
             <ion-icon name='home-outline' />

@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+@import './variables';
 
 header {
   height: 3em;
@@ -11,6 +12,7 @@ header {
   background: #1a1a1a;
   display: flex;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
 
   svg {
@@ -32,6 +34,9 @@ header {
   height: 95vh;
   padding: 0;
   left: -100%;
+  letter-spacing: .1em;
+  font-weight: 600;
+  font-family: $secondary;
   z-index: 50;
   transition: 200ms ease-in;
   
@@ -82,4 +87,16 @@ header {
   &.active {
     left: 0;
   }
+
 }
+
+
+
+@media (max-width: 550px) {
+  .sidenav {
+    width: 100%;
+  }
+}
+
+
+
