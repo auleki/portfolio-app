@@ -1,8 +1,7 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
-import theme from 'styled-theming';
-import Header from '../layout/Header';
-import { colors, fonts } from '../utils/constants';
+import styled, { css, keyframes } from 'styled-components'
+import theme from 'styled-theming'
+// import Header from '../layout/Header';
+import { colors, fonts } from '../utils/constants'
 
 const shockBounce = keyframes`
 	0% {
@@ -16,45 +15,53 @@ const shockBounce = keyframes`
 	100% {
 		transform: translateY(0em);
 	}
-`;
+`
+
+export const SidebarStyle = styled.div(
+  ({ color }) => css`
+    width: 240px;
+    background: ${colors.hardDark};
+  `
+)
 
 export const PageColor = theme('mode', {
-	light: colors.white,
-	dark: colors.dark
-});
+  light: colors.white,
+  dark: colors.dark
+})
 
 export const HeaderColor = theme('mode', {
-	light: colors.cream,
-	dark: colors.dark
-});
+  light: colors.cream,
+  dark: colors.dark
+})
 
 const HeaderTextColor = theme('mode', {
-	light: colors.dark,
-	dark: colors.white
-});
+  light: colors.dark,
+  dark: colors.white
+})
 
 export const PageWrap = styled.div`
-	width: 100%;
-	background: ${PageColor};
-	font-family: ${fonts.main};
+  width: 100%;
+  background: ${PageColor};
+  font-family: ${fonts.main};
+  /* padding: 0 ; */
 
-	&::-webkit-scrollbar {
-		width: .1em;
-		border-radius: 15px;
-		height: .3em;
-	}
+  &::-webkit-scrollbar {
+    width: 0.1em;
+    border-radius: 15px;
+    height: 0.3em;
+  }
 
-	&::-webkit-scrollbar-track {
-		background: ${colors.hardDark};
-		border-radius: 15px;
-	}
+  &::-webkit-scrollbar-track {
+    background: ${colors.hardDark};
+    border-radius: 15px;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background: ${colors.darkCream};
-		border-radius: 20px;
-		width: 4px;
-	}
-`;
+  &::-webkit-scrollbar-thumb {
+    background: ${colors.darkCream};
+    border-radius: 20px;
+    width: 4px;
+  }
+`
 export const HeaderWrap = styled.div`
 	height: 100vh;
 	/* background: linear-gradient(to right, #24242499, #1a1a1a99), url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616326741/portfolio/anchors-away_kana9b.svg') center fixed repeat; */
@@ -142,38 +149,38 @@ background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v161633
 			}
 		}
 	}
-`;
+`
 
 export const Title = styled.h1(
-	({ crazyFont, marginX, marginY, size }) => css`
-		font-family: ${crazyFont ? fonts.crazy : fonts.secondary};
-		font-size: ${size || 2}em;
-		font-weight: 400;
-		margin: ${marginY || 0} ${marginX || 0};
-	`
-);
+  ({ crazyFont, marginX, marginY, size }) => css`
+    font-family: ${crazyFont ? fonts.crazy : fonts.secondary};
+    font-size: ${size || 2}em;
+    font-weight: 400;
+    margin: ${marginY || 0} ${marginX || 0};
+  `
+)
 
 export const Paragraph = styled.p(
-	({ font, size, color, white, marginX, marginY, center }) => css`
-		font-size: ${size ? size : 1}em;
-		text-align: ${center ? 'center' : 'inherit'};
-		color: ${color ? color : white ? colors.white : colors.hardDark};
-		margin: ${marginY || 0} ${marginX || 0};
-		font-family: ${font || 'inherit'};
-	`
-);
+  ({ font, size, color, white, marginX, marginY, center }) => css`
+    font-size: ${size ? size : 1}em;
+    text-align: ${center ? 'center' : 'inherit'};
+    color: ${color ? color : white ? colors.white : colors.hardDark};
+    margin: ${marginY || 0} ${marginX || 0};
+    font-family: ${font || 'inherit'};
+  `
+)
 
 export const SubTitle = styled.h2(
-	({ size, color, secondary }) => css`
-		font-weight: 400;
-		font-family: ${fonts.secondary};
-		font-size: ${size ? size : 1}em;
-		color: ${secondary ? colors.lightGreen : color ? color : colors.white};
-	`
-);
+  ({ size, color, secondary }) => css`
+    font-weight: 400;
+    font-family: ${fonts.secondary};
+    font-size: ${size ? size : 1}em;
+    color: ${secondary ? colors.lightGreen : color ? color : colors.white};
+  `
+)
 
 export const Row = styled.div(
-	({ alignItems, justifyContent, paddingX, paddingY }) => css`
+  ({ alignItems, justifyContent, paddingX, paddingY }) => css`
 		justify-content: ${justifyContent || 'inherit'};
 		align-items: ${alignItems || 'inherit'};
 		display: flex;
@@ -259,7 +266,7 @@ export const Row = styled.div(
 			}
 		} */
 	`
-);
+)
 
 export const SkillCard = styled.div`
 		height: 8em;
@@ -345,7 +352,7 @@ export const SkillCard = styled.div`
 			}
 		}
 
-	`;
+	`
 /* 
 
 THIS IS FOR RECENT PROJECT HOVER
@@ -355,84 +362,84 @@ const JoyBounceAnim = keyframes`
 `; */
 
 export const StyleProjectCard = styled.div`
-	background: ${colors.hardDark};
-	height: 32rem;
-	color: ${colors.white};
-	transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
-	width: 30em;
-	border-radius: .3em;
-	border-bottom: .3em solid ${colors.cream};
-	padding-bottom: 4em;
+  background: ${colors.hardDark};
+  height: 32rem;
+  color: ${colors.white};
+  transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
+  width: 30em;
+  border-radius: 0.3em;
+  border-bottom: 0.3em solid ${colors.cream};
+  padding-bottom: 4em;
 
-	.repoView {
-		color: ${colors.white};
-		display: flex;
-		align-items: center;
-	}
+  .repoView {
+    color: ${colors.white};
+    display: flex;
+    align-items: center;
+  }
 
-	&:hover {
-		border-bottom: .3em solid ${colors.green};
-		box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
-		-webkit-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
-		-moz-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
-	}
+  &:hover {
+    border-bottom: 0.3em solid ${colors.green};
+    box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+    -webkit-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+    -moz-box-shadow: 0px 18px 26px -25px rgba(1, 217, 91, 0.75);
+  }
 
-	.image {
-		img {
-			height: auto;
-			width: 100%;
-			object-fit: cover;
-		}
-	}
+  .image {
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 
-	.info {
-		padding: 1em 1em;
+  .info {
+    padding: 1em 1em;
 
-		h2 {
-			text-transform: uppercase;
-			font-weight: 700;
-		}
+    h2 {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
 
-		p {
-			line-height: 1.4em;
-		}
-	}
+    p {
+      line-height: 1.4em;
+    }
+  }
 
-	.actions {
-		display: flex;
-		justify-content: space-between;
+  .actions {
+    display: flex;
+    justify-content: space-between;
 
-		a {
-			text-decoration: none;
-		}
-	}
+    a {
+      text-decoration: none;
+    }
+  }
 
-	@media (min-width: 320px) and (max-width: 560px) {
-		height: 100%;
-		padding-bottom: 0;
-		.actions {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+  @media (min-width: 320px) and (max-width: 560px) {
+    height: 100%;
+    padding-bottom: 0;
+    .actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-			a,
-			button {
-				width: 100%;
-			}
+      a,
+      button {
+        width: 100%;
+      }
 
-			button {
-				display: flex;
-				justify-content: center;
-				margin-bottom: 2em;
-			}
-		}
-	}
-`;
+      button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2em;
+      }
+    }
+  }
+`
 
 export const SectionWrap = styled.div(
-	({ alignItems, justifyContent }) => css`
-	padding: 1em 0;
+  ({ alignItems, justifyContent }) => css`
+	padding: 1em 0em;
 	min-height: 100vh;
 	overflow-y: scroll;
 	display: flex;
@@ -440,7 +447,9 @@ export const SectionWrap = styled.div(
 	flex-direction: column;
 	align-items: ${alignItems || 'inherit'};
 	justify-content: ${justifyContent || 'inherit'};
-	background: ${HeaderColor};
+	/* background: ${HeaderColor}; */
+	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
+	background-attachment: fixed;
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
 
@@ -879,237 +888,256 @@ export const SectionWrap = styled.div(
 		}
 	}
 	`
-);
+)
 
 export const DotIndicator = styled.div(
-	({ canActivate }) => css`
-		height: .5em;
-		display: inline-flex;
-		width: .5em;
-		background: ${canActivate ? colors.lightGreen : colors.red};
-		border-radius: 100%;
-	`
-);
+  ({ canActivate }) => css`
+    height: 0.5em;
+    display: inline-flex;
+    width: 0.5em;
+    background: ${canActivate ? colors.lightGreen : colors.red};
+    border-radius: 100%;
+  `
+)
 
 export const SkillsSection = styled.div(
-	({ paddingY, paddingX }) => css`
-		background: ${colors.dark};
-		padding: 2em 0;
-		justify-content: space-between;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		/* position: relative; */
-		display: grid;
-		grid-template-columns: repeat(10, 10em);
+  ({ paddingY, paddingX }) => css`
+    background: ${colors.dark};
+    padding: 2em 0;
+    justify-content: space-between;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* position: relative; */
+    display: grid;
+    grid-template-columns: repeat(10, 10em);
 
-		&::-webkit-scrollbar {
-			width: .1em;
-			border-radius: 15px;
-			height: .3em;
-		}
+    &::-webkit-scrollbar {
+      width: 0.1em;
+      border-radius: 15px;
+      height: 0.3em;
+    }
 
-		&::-webkit-scrollbar-track {
-			background: ${colors.hardDark};
-			border-radius: 15px;
-		}
+    &::-webkit-scrollbar-track {
+      background: ${colors.hardDark};
+      border-radius: 15px;
+    }
 
-		&::-webkit-scrollbar-thumb {
-			background: ${colors.darkCream};
-			border-radius: 20px;
-			/* height: 4px;
+    &::-webkit-scrollbar-thumb {
+      background: ${colors.darkCream};
+      border-radius: 20px;
+      /* height: 4px;
 			width: 4px; */
-		}
+    }
 
-		.section-tip {
-			position: absolute;
-			bottom: 5%;
-			transition: 250ms ease-in;
-			right: 0;
+    .section-tip {
+      position: absolute;
+      bottom: 5%;
+      transition: 250ms ease-in;
+      right: 0;
 
-			p {
-				margin-right: .5em;
-				transition: 300ms ease-out;
-				font-size: .8em;
-			}
-		}
+      p {
+        margin-right: 0.5em;
+        transition: 300ms ease-out;
+        font-size: 0.8em;
+      }
+    }
 
-		.skill {
-			padding: 1em;
-			text-align: center;
-			width: 100%;
-			transition: 300ms ease-in;
-			img {
-				height: 3em;
-				object-fit: cover;
-				width: 3em;
-				margin-bottom: .3em;
-			}
+    .skill {
+      padding: 1em;
+      text-align: center;
+      width: 100%;
+      transition: 300ms ease-in;
+      img {
+        height: 3em;
+        object-fit: cover;
+        width: 3em;
+        margin-bottom: 0.3em;
+      }
 
-			h2 {
-				visibility: hidden;
-				transition: 200ms ease-in;
-			}
+      h2 {
+        visibility: hidden;
+        transition: 200ms ease-in;
+      }
 
-			&:hover {
-				background: ${colors.hardDark};
-				cursor: pointer;
-				transform: scale(1.1) translateX(.5em);
-				h2 {
-					visibility: visible;
-				}
-			}
-		}
+      &:hover {
+        background: ${colors.hardDark};
+        cursor: pointer;
+        transform: scale(1.1) translateX(0.5em);
+        h2 {
+          visibility: visible;
+        }
+      }
+    }
 
-		&:hover {
-			.section-tip {
-				color: ${colors.gray};
-				p {
-					color: ${colors.gray};
-					margin-right: .1em;
-				}
-			}
-		}
-	`
-);
+    &:hover {
+      .section-tip {
+        color: ${colors.gray};
+        p {
+          color: ${colors.gray};
+          margin-right: 0.1em;
+        }
+      }
+    }
+  `
+)
 
 const ThemeButtonColor = theme('mode', {
-	light: colors.blue,
-	dark: colors.green
-});
+  light: colors.blue,
+  dark: colors.green
+})
 
 const TextButtonColor = theme('mode', {
-	light: colors.lightGreen,
-	dark: colors.white
-});
+  light: colors.lightGreen,
+  dark: colors.white
+})
 
 export const Button = styled.button(
-	({ primary, size, color, alternate, bgColor, canActivate }) => `
-		padding: 1em 2em;
-		background: ${primary ? colors.dark : alternate ? colors.lightGreen : colors.cream};
-		transition: background 150ms ease-in, 
-		border-right 500ms ease-in;
-		display: flex;
-		align-items: center;
-		font-weight: 600;
-		/* border: .1em solid transparent; */
-		font-size: ${size || 0.8}em;
-		letter-spacing: .1em;
-		border-right: .5em solid ${colors.red};
-		border-left: .5em solid transparent;
-		font-family: ${fonts.secondary};
-		border-top-right-radius: .3em;
-		border-bottom-right-radius: .3em;
-		color: ${primary ? colors.darkCream : alternate ? colors.white : colors.hardDark};
+  ({ primary, size, color, alternate, bgColor, canActivate }) => css`
+    padding: 1em 2em;
+    background: ${primary
+      ? colors.dark
+      : alternate
+      ? colors.lightGreen
+      : colors.cream};
+    transition: background 150ms ease-in, border-right 500ms ease-in;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    /* border: .1em solid transparent; */
+    font-size: ${size || 0.8}em;
+    letter-spacing: 0.1em;
+    border-right: 0.5em solid ${colors.red};
+    border-left: 0.5em solid transparent;
+    font-family: ${fonts.secondary};
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    color: ${primary
+      ? colors.darkCream
+      : alternate
+      ? colors.white
+      : colors.hardDark};
 
-		ion-icon {
-			font-size: 1.5em;
-			margin-left: .5em;
-			transition: 400ms ease-out, transform 300ms ease-out;
-			opacity: 0.3;
-			position: relative;
-		}
-		
-		&:hover, &:focus {
-			background: ${primary ? colors.red : colors.dark};
-			color: ${primary ? colors.darkCream : colors.cream};
-			border-right: .5em solid ${colors.white};
-			cursor: pointer;
+    ion-icon {
+      font-size: 1.5em;
+      margin-left: 0.5em;
+      transition: 400ms ease-out, transform 300ms ease-out;
+      opacity: 0.3;
+      position: relative;
+    }
 
-			ion-icon {
-				opacity: 1;
-				transform: translateX(.2em) scale(1.5);
-				colors: ${colors.lightGreen};
-			}
-		}
+    &:hover,
+    &:focus {
+      background: ${primary ? colors.red : colors.dark};
+      color: ${primary ? colors.darkCream : colors.cream};
+      border-right: 0.5em solid ${colors.white};
+      cursor: pointer;
 
-		&:disabled {
-			background: ${colors.red};
-			cursor: not-allowed;
-			border-right: .5em solid ${colors.darkCream};
-			ion-icon {
-				/* transform: rotateZ(30deg); */
-			}
+      ion-icon {
+        opacity: 1;
+        transform: translateX(0.2em) scale(1.5);
+        colors: ${colors.lightGreen};
+      }
+    }
 
-			&:hover {
-				ion-icon {
-					
-				}
-			}
-			/* pointer-events: none; */
-		}
+    &:disabled {
+      background: ${colors.red};
+      cursor: not-allowed;
+      border-right: 0.5em solid ${colors.darkCream};
+      ion-icon {
+        /* transform: rotateZ(30deg); */
+      }
 
-		&:disabled, &:hover {
-			/* transform: rotateZ(30deg); */
-		}
+      &:hover {
+        ion-icon {
+        }
+      }
+      /* pointer-events: none; */
+    }
 
-		&:focus, &:hover {
-			border-left: .5em solid ${canActivate ? colors.lightGreen : colors.red};
-		}
-	`
-);
+    &:disabled,
+    &:hover {
+      /* transform: rotateZ(30deg); */
+    }
+
+    &:focus,
+    &:hover {
+      border-left: 0.5em solid ${canActivate ? colors.lightGreen : colors.red};
+    }
+  `
+)
 
 export const ThemeSwitchButton = styled.button`
-	background: ${ThemeButtonColor};
-	height: 3em;
-	padding: 0 1em;
-	position: absolute;
-	cursor: pointer;
-	color: ${TextButtonColor};
-	top: 2em;
-	right: 3%;
-	opacity: .5;
-	transition: 200ms ease-in;
-	border-radius: .1em;
+  background: ${ThemeButtonColor};
+  height: 3em;
+  padding: 0 1em;
+  position: absolute;
+  cursor: pointer;
+  color: ${TextButtonColor};
+  top: 2em;
+  right: 3%;
+  opacity: 0.5;
+  transition: 200ms ease-in;
+  border-radius: 0.1em;
 
-	&:hover {
-		opacity: 1;
-	}
-`;
+  &:hover {
+    opacity: 1;
+  }
+`
 
 export const FooterStyle = styled.div(
-	({ size }) => css`
-		background: ${colors.darkCream};
-		color: ${colors.red};
-		padding: 2em 1em;
-		margin-top: 2em;
-		text-align: center;
+  ({ size }) => css`
+    background: ${colors.darkCream};
+    color: ${colors.red};
+    padding: 2em 1em;
+    margin-top: 2em;
+    text-align: center;
 
-		.text {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-	`
-);
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `
+)
 
 export const SpanText = styled.span(
-	({ color, size, marginX, marginY }) => css`
-		color: ${color || colors.white};
-		font-size: ${size || 1}em;
-		margin: ${marginY || 0}em ${marginX || 0}em;
-	`
-);
+  ({ color, size, marginX, marginY }) => css`
+    color: ${color || colors.white};
+    font-size: ${size || 1}em;
+    margin: ${marginY || 0}em ${marginX || 0}em;
+  `
+)
 
 export const NavStyle = styled.nav(
-	({ color }) => css`		
+  ({ color, open }) => css`		
 		background: ${colors.dark};
 		margin: 0;
-		width: 100px;
+		width: ${open ? '100vw' : '110px'};
 		/* height: 100%; */
 		height: 100vh;
 		z-index: 50;
-		position: relative;
+		position: ${open ? 'absolute' : 'relative'} ;
 		overflow: hidden;
 		transition: 200ms ease-out;
 		top: 0;
 		border-right: .2em solid ${colors.green};
 		left: 0;
 
-		
+		.close {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+
+			ion-icon {
+				font-size: 4em;
+				color: ${colors.green};
+			}
+		}
 
 		.navigation {
 			list-style-type: none;
 			font-family: ${fonts.main};
+			width: 100%;
 			/* position: fixed; */
 			/* background: ${colors.hardDark}; */
 
@@ -1119,6 +1147,7 @@ export const NavStyle = styled.nav(
 
 			li {
 				padding: 1em 1.5em;
+				width: 100%;
 				display: flex;
 				align-items: center;
 				color: ${colors.white};
@@ -1128,7 +1157,7 @@ export const NavStyle = styled.nav(
 				span {
 					color: ${colors.white};
 					transition: left 300ms ease-in;
-					display: none;
+					display: ${open ? 'flex' : 'none'} ;
 				}
 
 				ion-icon {
@@ -1137,7 +1166,7 @@ export const NavStyle = styled.nav(
 					color: ${colors.darkCream};
 				}
 
-				&:hover {
+				 &:hover {
 					background: ${colors.hardDark};
 					border-left: .2em solid ${colors.blue};
 					/* border-top-right-radius: 1em;
@@ -1163,18 +1192,56 @@ export const NavStyle = styled.nav(
 				display: inline;
 			}
 		}
+
+		@media (min-width: 320px) and (max-width: 676px) {
+			display: ${open ? 'flex' : 'none'} ;
+		}
 	`
-);
+)
 
 export const AppStyle = styled.div(
-	({ color }) => `
-		display: flex;
-		/* flex-direction: column; */
-		height: 100vh;
-		overflow: hidden;
-		z-index: 0;
-		background: ${colors.dark};
-		grid-template-columns: .5fr 3.5fr;
-		/* grid-template-columns: .001fr 3fr; */
-	`
-);
+  ({ color }) => css`
+    display: flex;
+    /* flex-direction: column; */
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    background: ${colors.dark};
+    grid-template-columns: 0.5fr 3.5fr;
+    /* grid-template-columns: .001fr 3fr; */
+  `
+)
+
+export const RoundButton = styled.button(
+  ({ color }) => css`
+    height: 5em;
+    width: 5em;
+    background: ${colors.green};
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2em;
+    right: 2em;
+    border-radius: 10px;
+    transition: 200ms ease-in;
+
+    ion-icon {
+      font-size: 3em;
+      color: ${colors.white};
+    }
+
+    &:hover {
+      background: ${colors.dark};
+      cursor: pointer;
+
+      ion-icon {
+        color: ${colors.lightGreen};
+      }
+    }
+
+    @media (min-width: 676px) {
+      display: none;
+    }
+  `
+)

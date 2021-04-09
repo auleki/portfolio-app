@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionWrap, Title, SubTitle } from '../components/StyledComponents';
+import { SectionWrap, SubTitle } from '../components/StyledComponents';
 import iNext from '../assets/fast-forward.svg';
 
 const Experience = () => {
