@@ -36,6 +36,12 @@ const Sidebar = ({ visible, setOpen }) => {
             <span>ABOUT ME</span>
           </li>
         </Link>
+        <Link to='/pg'>
+          <li>
+            <ion-icon name='finger-print-outline' />
+            <span>Playground</span>
+          </li>
+        </Link>
       </ul>
     </SidebarStyle>
   )

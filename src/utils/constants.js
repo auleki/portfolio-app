@@ -1,3 +1,5 @@
+import * as AiIcons from 'react-icons/ai'
+
 let c1, c2, c3, c4, c5, c6, c7, c8
 c1 = '#F2E8CF'
 c2 = '#A7C957'
@@ -22,10 +24,21 @@ export const colors = {
   hardDark: '#1a1a1a'
 }
 
+export const numeric = {
+  border: 0.2
+}
+
 export const fonts = {
   main: 'Inconsolata',
   secondary: 'Recursive',
   crazy: 'Carter One'
+}
+
+export const icons = {
+  link: <AiIcons.AiOutlineLink />,
+  github: <AiIcons.AiOutlineGithub />,
+  lock: <AiIcons.AiOutlineLock />,
+  unlock: <AiIcons.AiOutlineUnlock />
 }
 
 export const recentProjects = [
@@ -62,14 +75,77 @@ export const recentProjects = [
 
 export const projectData = [
   {
+    section: 'Fullstack',
+    projects: [
+      {
+        title: 'Checkadigs Store',
+        description: 'An E-Commerce store built for a client.',
+        clientOwned: true,
+        technologies: [
+          {
+            name: 'React',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'Redux',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          }
+        ],
+        stack: ['REACT'],
+        imgUrl:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619321294/portfolio/portfolio/checkadigs_uc1zol.png',
+        // githubLink: 'https://github.com/auleki/tracking-covid-19',
+        liveUrl: 'https://nifty-ride-abb2a8.netlify.app/'
+      },
+      {
+        title: 'Portfolio App',
+        description:
+          'This is the very app you are browsing, care to look under the hood?',
+        clientOwned: false,
+        technologies: ['Context API'],
+        stack: ['REACT'],
+        imgUrl:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619321294/portfolio/portfolio/portfolio_f1lnkd.png',
+        githubLink: 'https://github.com/auleki/portfolio-app',
+        liveUrl: 'https://sleepy-snyder-b79f21.netlify.app/'
+      },
+      {
+        title: 'Checkadigs Dashboard',
+        description:
+          'A dashboard for store admin to visualize and interact with data.',
+        clientOwned: true,
+        technologies: ['Redux'],
+        stack: ['REACT'],
+        imgUrl:
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619321294/portfolio/portfolio/dashboard_wenwli.png'
+        // githubLink: 'https://github.com/auleki/tracking-covid-19',
+        // liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+      }
+    ]
+  },
+  {
     section: 'Frontend',
     projects: [
       {
         title: 'Covid 19 Tracker',
         description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+          'This application fetches Covid 19 stats from an API and presents it beautifully to the client.',
         clientOwned: false,
-        technologies: ['ChartJS'],
+        technologies: [
+          {
+            name: 'ChartJS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'NodeJs',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'React',
+            img:
+              'https://img.pngio.com/js-logo-react-react-js-icon-react-png-512_512.png'
+          }
+        ],
         stack: ['REACT'],
         imgUrl:
           'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
@@ -77,165 +153,114 @@ export const projectData = [
         liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
       },
       {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+        title: 'Pepsi Showcase',
+        description: 'A landing page to showcase Pepsi can products.',
         clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
+        technologies: [
+          {
+            name: 'HTML',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'CSS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'JS',
+            img:
+              'https://img.pngio.com/js-logo-react-react-js-icon-react-png-512_512.png'
+          }
+        ],
+        stack: ['HTML/CSS/JS'],
         imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619319489/portfolio/portfolio/pepsi-showcase_m755q0.png',
+        githubLink: 'https://github.com/auleki/sneaker-slides',
+        liveUrl: 'https://auleki.github.io/sneaker-slides/'
       },
       {
-        title: 'Covid 19 Tracker',
+        title: 'Simple Accordion',
         description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+          'Here is an accordion made with HTML and CSS, pretty simple.',
         clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
+        technologies: [
+          {
+            name: 'HTML',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'CSS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          }
+        ],
+        stack: ['HTML/CSS'],
         imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619319488/portfolio/portfolio/accordion_zzu9ia.png',
+        githubLink: 'https://github.com/auleki/simple-accordion',
+        liveUrl: 'https://auleki.github.io/simple-accordion'
       },
       {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+        title: 'Grid Example',
+        description: 'This page was built with CSS grids.',
         clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
+        technologies: [
+          {
+            name: 'HTML',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'CSS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          }
+        ],
+        stack: ['HTML/CSS'],
         imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619319495/portfolio/portfolio/grid-example_z0hicv.png',
+        githubLink: 'https://github.com/auleki/grid-example',
+        liveUrl: 'https://auleki.github.io/grid-example'
       },
       {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+        title: 'Lookup Books',
+        description: 'This single page site fetches data on books from an API.',
         clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
+        technologies: [
+          {
+            name: 'HTML',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'CSS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'JS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          }
+        ],
+        stack: ['HTML/CSS/JS'],
         imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619319490/portfolio/portfolio/optisource-t2_ji0qev.png',
+        githubLink: 'https://github.com/auleki/optisource-t2',
+        liveUrl: 'https://auleki.github.io/optisource-t2/'
       },
       {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+        title: 'Invoice Example',
+        description: 'This page was built to create invoice for customers.',
         clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
+        technologies: [
+          {
+            name: 'HTML',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          },
+          {
+            name: 'CSS',
+            img: 'https://www.chartjs.org/img/chartjs-logo.svg'
+          }
+        ],
+        stack: ['HTML/CSS'],
         imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      }
-    ]
-  },
-  {
-    section: 'Fullstack',
-    projects: [
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
+          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1619319489/portfolio/portfolio/optisource-t1_gtsvtt.png',
+        githubLink: 'https://github.com/auleki/optisource-t1',
+        liveUrl: 'https://auleki.github.io/optisource-t1/'
       }
     ]
   },
@@ -244,9 +269,9 @@ export const projectData = [
     section: 'Backend',
     projects: [
       {
-        title: 'Covid 19 Tracker',
+        title: 'Jumga Server',
         description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
+          'A backend application that serves data for an E-Commerce store.',
         clientOwned: false,
         technologies: ['ChartJS'],
         stack: ['REACT'],
@@ -256,71 +281,11 @@ export const projectData = [
         liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
       },
       {
-        title: 'Covid 19 Tracker',
+        title: 'Checkadigs Backend',
         description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
-        stack: ['REACT'],
-        imgUrl:
-          'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',
-        githubLink: 'https://github.com/auleki/tracking-covid-19',
-        liveUrl: 'https://friendly-lichterman-40c5f6.netlify.app/'
-      },
-      {
-        title: 'Covid 19 Tracker',
-        description:
-          'This frontend application fetches Covid 19 stats from an API and presents it beautifully to the client.',
-        clientOwned: false,
-        technologies: ['ChartJS'],
+          'This is the API that powers both the store and admin dashboard.',
+        clientOwned: true,
+        technologies: ['MongoDB'],
         stack: ['REACT'],
         imgUrl:
           'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616179417/portfolio/checkadigs-sc-5_kv31bf.png',

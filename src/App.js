@@ -18,12 +18,11 @@ const App = () => {
     if (open) {
       setOpen(false)
     }
-    return
   }
 
   return (
     <ThemeProvider theme={{ mode: 'dark' }}>
-      <div onClick={closeMenu}>
+      <div className='App' onClick={closeMenu}>
         <header>
           {open ? (
             <RiCloseCircleLine onClick={expandMenu} />

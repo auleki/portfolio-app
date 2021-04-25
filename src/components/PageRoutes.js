@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import About from '../layout/About'
 import Contact from '../layout/Contact'
 import Experience from '../layout/Experience'
+import Playground from '../layout/Playground'
 import RecentProjects from '../layout/RecentProjects'
 import Homepage from '../pages/Homepage'
 import NotFound from '../pages/NotFound'
@@ -18,6 +19,7 @@ const PageRoutes = () => {
       <Route path='/experience' component={Experience} />
       <Route path='/contact' component={Contact} />
       <Route path='/about' component={About} />
+      <Route path='/pg' component={Playground} />
       <Route component={NotFound} />
     </Switch>
   )
