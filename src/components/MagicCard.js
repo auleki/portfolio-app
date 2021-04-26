@@ -33,18 +33,7 @@ const MagicCard = ({ project }) => {
       </div>
 
       <div className='back'>
-        {/* <div className='streaming-info'>
-          <p className='game-stat'>
-            559k<span>Watching</span>
-          </p>
-          <p className='game-stat'>
-            25.8k<span>Streams</span>
-          </p>
-        </div> */}
-        <div className='info'>
-          <p>{project.description}</p>
-        </div>
-
+        {/* <p className='description'>{project.description}</p> */}
         {/* if nothing in buttons show top secret */}
         <div className='buttons'>
           <a href={project.liveUrl}>
@@ -55,14 +44,14 @@ const MagicCard = ({ project }) => {
           </a>
         </div>
         <div className='streamers'>
-          {/* {project.technologies.map((tech, i) => (
+          {project.technologies.map((tech, i) => (
             <div className='streamer'>
               <div className='icon'>
                 <img src={tech.img} alt='' />
               </div>
-              <div className='name'>{tech.name}</div>
+              {/* <div className='name'>{tech.name}</div> */}
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
 

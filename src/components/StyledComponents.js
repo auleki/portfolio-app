@@ -72,7 +72,7 @@ export const HeaderWrap = styled.div`
 	/* background-color: #1a1a1a; */
 /* background-color: #1a1a1a; */
 	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
-	background-attachment: fixed;
+	/* background-attachment: fixed; */
 	/* background-size: cover; */
 
 	color: ${HeaderTextColor};
@@ -388,22 +388,31 @@ const gameName = keyframes`
 export const StyleMagicCard = styled.div(
   ({ color }) => css`
     width: 15.5em;
-		z-index: 1000;
+		z-index: 400;
+		display: flex;
+		/* align-items: center; */
+		justify-content: center;
     position: relative;
-		/* margin-left: 10em; */
-		margin-top: 5em;
+		margin: 2em 0;
 		font-family: ${fonts.secondary};
 		
 		.buttons {
 			display: flex;
-			justify-content: space-between;
+			/* background: ${colors.green}; */
+			/* justify-content: space-between; */
+			width: 100%;
+			
 			gap: 1em;
 			justify-content: center;
 			/* background: ${colors.green}; */
 		}
 
+		.description {
+			text-align: center;
+		}
+
 		.background {
-			background: ${colors.dark};
+			background: ${colors.hardDark};
 			position: absolute;
 			top: 0;
 			height: 100%;
@@ -483,8 +492,11 @@ export const StyleMagicCard = styled.div(
 			left: 0;
 			display: flex;
 			align-items: center;
+			margin-left: 23%;
 			flex-direction: column;
 			gap: 1em;
+			transform: translateY(80%);
+			transition: transform	 250ms ease-in, opacity 200ms ease-in;
 
 			.streaming-info {
 				columns: 2;
@@ -520,6 +532,18 @@ export const StyleMagicCard = styled.div(
 
 			.back {
 				opacity: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-top: 4em;
+				transform: translateY(0em);
+				/* padding-bottom: 2em; */
+			}
+
+			.description {
+				/* transform: translateY(4em); */
+				/* margin: 4em 0; */
+				margin-top: 6em;
 			}
 
 			.streamers {
@@ -534,15 +558,13 @@ export const StyleMagicCard = styled.div(
 
 			.rank {
 				transform: translate(150%, -90%);
-				
 			}
 			
 			.front {
-				transform: translateY(-30%) scale(.8);
+				transform: translateY(-35%) scale(.8);
 
 				.name {
 					animation: ${gameName} 200ms forwards;
-					margin: 1.8em 0;
 				}
 
 				.stats {
@@ -567,7 +589,7 @@ export const StyleProjectCard = styled.div`
   width: 30em;
   border-radius: 0.3em;
   border-bottom: 0.3em solid ${colors.cream};
-  padding-bottom: 4em;
+  /* padding-bottom: 4em; */
 
   .repoView {
     color: ${colors.white};
@@ -590,7 +612,7 @@ export const StyleProjectCard = styled.div`
     }
   }
 
-  .info {
+  /* .info {
     padding: 1em 1em;
 
     h2 {
@@ -601,7 +623,7 @@ export const StyleProjectCard = styled.div`
     p {
       line-height: 1.4em;
     }
-  }
+  } */
 
   .actions {
     display: flex;
@@ -645,8 +667,8 @@ export const SectionWrap = styled.div(
 	flex-direction: column;
 	align-items: ${alignItems || 'inherit'};
 	justify-content: ${justifyContent || 'inherit'};
-	/* background: ${HeaderColor}; */
-	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
+	background: ${HeaderColor};
+	/* background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png"); */
 	background-attachment: fixed;
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
@@ -669,14 +691,17 @@ export const SectionWrap = styled.div(
 	}
 
 	.sectionProjects {
-		/* background: ${colors.red}; */
+		/* height: 60vh; */
+		/* background: ${colors.green}; */
+		position: relative;
 		display: grid;
 		grid-template-columns: repeat(3, 2fr);
-		/* column-gap: 4em; */
+		/* justify-content: space-between; */
 	}
 
 	.projectsSection {
 		display: flex;
+		/* margin: 1em 0; */
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 0 3em;
@@ -685,8 +710,6 @@ export const SectionWrap = styled.div(
 	.sectionTitle {
 		display: flex;
 		flex-direction: column-reverse;
-		/* padding: 0 2em; */
-		padding-bottom: 3.5em;
 		padding-top: 1.5em;
 		
 		
