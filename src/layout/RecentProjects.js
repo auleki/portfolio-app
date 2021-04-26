@@ -6,12 +6,8 @@ import {
   SectionWrap,
   SubTitle
 } from '../components/StyledComponents'
-// import NeumorphismImgPath from './../assets/neumorphism.jpg';
-// import GridExampleImgPath from '../assets/grid-example.jpg';
-// import Covid19ImgPath from '../assets/covid-19-tracker.jpg';
-// import { Splide, SplideSlide } from '@splidejs/react-splide';
-// import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import { recentProjects, fonts, projectData } from '../utils/constants'
+import MagicCard from '../components/MagicCard'
 
 const ProjectCard = ({ project }) => {
   console.log('Picture link valid?', project.imageUrl)
@@ -31,7 +27,7 @@ const ProjectCard = ({ project }) => {
         <div className='actions'>
           <a href={project.liveUrl}>
             <Button>
-              <span>Demo Preview</span>
+              <span>Preview</span>
               <ion-icon name='link-outline' />
             </Button>
           </a>
@@ -71,11 +67,13 @@ const ProjectsCard = ({ projects }) => {
       <div className='recentProjects'>
         <div className='sectionTitle'>
           <div className='dash' />
-          <SubTitle size={3}>{projects.section}</SubTitle>
+          <SubTitle size={2}>{projects.section}</SubTitle>
         </div>
-        {projects.projects.map((project, i) => (
-          <ProjectCard key={i} project={project} />
-        ))}
+        <div className='sectionProjects'>
+          {projects.projects.map((project, i) => (
+            <MagicCard key={i} project={project} />
+          ))}
+        </div>
       </div>
     </>
   )
@@ -87,16 +85,11 @@ const RecentProjects = () => {
   return (
     <SectionWrap>
       {/* UNDER STYLEPROJECTCARD  */}
-
-      {projectSets.map((data, i) => (
-        <ProjectsCard projects={data} />
-      ))}
-
-      {/* <div className='projects'>
-        {recentProjects.map((project, index) => (
-          <ProjectCard project={project} />
+      <div className='projectsSection'>
+        {projectSets.map((project, i) => (
+          <ProjectsCard projects={project} />
         ))}
-      </div> */}
+      </div>
     </SectionWrap>
   )
 }

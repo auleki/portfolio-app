@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
 import theme from 'styled-theming'
 // import Header from '../layout/Header';
-import { colors, fonts } from '../utils/constants'
+import { colors, fonts, numeric } from '../utils/constants'
 
 const shockBounce = keyframes`
 	0% {
@@ -20,6 +20,7 @@ const shockBounce = keyframes`
 export const SidebarStyle = styled.div(
   ({ color }) => css`
     width: 240px;
+    z-index: 500;
     background: ${colors.hardDark};
   `
 )
@@ -70,10 +71,10 @@ export const HeaderWrap = styled.div`
 	/* background-color: #1a1a1a; */
 	/* background-color: #1a1a1a; */
 /* background-color: #1a1a1a; */
-background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
-	background-attachment: fixed;
+	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
+	/* background-attachment: fixed; */
 	/* background-size: cover; */
-	
+
 	color: ${HeaderTextColor};
 	display: flex;
 	align-items: center;
@@ -361,6 +362,225 @@ const JoyBounceAnim = keyframes`
 		
 `; */
 
+const gameName = keyframes`
+	0% {
+		text-align: left;
+		opacity: 1;
+	}
+
+	20% {
+		text-align: left;
+		opacity: 0;
+	}
+
+	50% {
+		text-align: center;
+		opacity: 0;
+	}
+
+	100% {
+		text-align: center;
+		transform: scale(1.4);
+		opacity: 1;
+	}
+`
+
+export const StyleMagicCard = styled.div(
+  ({ color }) => css`
+    width: 15.5em;
+		z-index: 400;
+		display: flex;
+		/* align-items: center; */
+		justify-content: center;
+    position: relative;
+		margin: 2em 0;
+		font-family: ${fonts.secondary};
+		
+		.buttons {
+			display: flex;
+			/* background: ${colors.green}; */
+			/* justify-content: space-between; */
+			width: 100%;
+			
+			gap: 1em;
+			justify-content: center;
+			/* background: ${colors.green}; */
+		}
+
+		.description {
+			text-align: center;
+		}
+
+		.background {
+			background: ${colors.hardDark};
+			position: absolute;
+			top: 0;
+			height: 100%;
+			bottom: 0;
+			left: 0;
+			border-radius: ${numeric.border}em;
+			right: 0;
+			opacity: 0;
+			z-index: -1;
+			transform: scale(.2, .9);
+			/* transition: 250ms ease-out; */
+		}
+
+		.thumbnail {
+			border-radius: ${numeric.border}em;
+			object-fit: contain;
+			height: auto;
+			width: 100%;
+		}
+
+		.rank {
+			position: absolute;
+			font-weight: 600;
+			top: 0;
+			right: 1em;
+			z-index: 200;
+			background: rgba(255, 255, 255, .75);
+			padding: .5em .5em .75em;
+			clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 0);
+			color: ${colors.dark};
+			transition: transform 150ms cubic-bezier(.21, 1.05, .81, 1.00), opacity 100ms linear;
+		}
+
+    .streamers {
+      display: flex;
+
+      img {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+      }
+    }
+
+    .front {
+			transition: 250ms ease-out;
+
+      .stats {
+        display: flex;
+        /* border: 2px solid ${colors.blue}; */
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .name {
+        /* text-align: center; */
+        margin: 0.75em 0;
+      }
+
+			.streamers img {
+				border: 2px solid ${colors.white};
+
+				&:nth-of-type(1) {
+					transform: translateX(50%);
+					z-index: 1;
+				}
+
+				&:nth-of-type(2) {
+					transform: translateX(25%);
+				}
+			}
+    }
+
+    .back {
+			opacity: 0;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			margin-left: 23%;
+			flex-direction: column;
+			gap: 1em;
+			transform: translateY(80%);
+			transition: transform	 250ms ease-in, opacity 200ms ease-in;
+
+			.streaming-info {
+				columns: 2;
+				column-rule: 1px solid rgba(255, 255, 255, .6);
+				/* background: ${colors.white};	 */
+			}
+
+			.info {
+				text-align: center;
+			}
+
+
+			.game-stat {
+				font-size: 1.125em;
+				text-align: center;
+
+				span {
+					font-size: .85em;
+					display: block;
+				}
+			}
+    }
+
+    img {
+      height: 15rem;
+      width: 100%;
+      object-fit: cover;
+    }
+
+		// COMPONENT HOVER STATE
+
+		&:hover {
+
+			.back {
+				opacity: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-top: 4em;
+				transform: translateY(0em);
+				/* padding-bottom: 2em; */
+			}
+
+			.description {
+				/* transform: translateY(4em); */
+				/* margin: 4em 0; */
+				margin-top: 6em;
+			}
+
+			.streamers {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.streamer {
+					margin-right: 1em;
+					text-align: center;
+			}
+			}
+
+			.rank {
+				transform: translate(150%, -90%);
+			}
+			
+			.front {
+				transform: translateY(-35%) scale(.8);
+
+				.name {
+					animation: ${gameName} 200ms forwards;
+				}
+
+				.stats {
+					opacity: 0;
+				}
+			}
+			
+			.background {
+				transform: scale(1.4, 1.2);
+				opacity: 1;
+				transition: transform 150ms cubic-bezier(.21, 1.05, .81, 1.00), opacity 100ms linear;
+			}
+		}
+  `
+)
+
 export const StyleProjectCard = styled.div`
   background: ${colors.hardDark};
   height: 32rem;
@@ -369,7 +589,7 @@ export const StyleProjectCard = styled.div`
   width: 30em;
   border-radius: 0.3em;
   border-bottom: 0.3em solid ${colors.cream};
-  padding-bottom: 4em;
+  /* padding-bottom: 4em; */
 
   .repoView {
     color: ${colors.white};
@@ -392,7 +612,7 @@ export const StyleProjectCard = styled.div`
     }
   }
 
-  .info {
+  /* .info {
     padding: 1em 1em;
 
     h2 {
@@ -403,7 +623,7 @@ export const StyleProjectCard = styled.div`
     p {
       line-height: 1.4em;
     }
-  }
+  } */
 
   .actions {
     display: flex;
@@ -440,15 +660,15 @@ export const StyleProjectCard = styled.div`
 export const SectionWrap = styled.div(
   ({ alignItems, justifyContent }) => css`
 	padding: 1em 0em;
-	min-height: 100vh;
+	height: 100vh;
 	overflow-y: scroll;
 	display: flex;
 	width: 100%;
 	flex-direction: column;
 	align-items: ${alignItems || 'inherit'};
 	justify-content: ${justifyContent || 'inherit'};
-	/* background: ${HeaderColor}; */
-	background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png");
+	background: ${HeaderColor};
+	/* background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png"); */
 	background-attachment: fixed;
 	font-family: ${fonts.main};
 	color: ${HeaderTextColor};
@@ -470,11 +690,26 @@ export const SectionWrap = styled.div(
 		width: 4px;
 	}
 
+	.sectionProjects {
+		/* height: 60vh; */
+		/* background: ${colors.green}; */
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(3, 2fr);
+		/* justify-content: space-between; */
+	}
+
+	.projectsSection {
+		display: flex;
+		/* margin: 1em 0; */
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 3em;
+	}
+
 	.sectionTitle {
 		display: flex;
 		flex-direction: column-reverse;
-		/* padding: 0 2em; */
-		padding-bottom: 3.5em;
 		padding-top: 1.5em;
 		
 		
@@ -991,14 +1226,27 @@ const TextButtonColor = theme('mode', {
   dark: colors.white
 })
 
+export const AltButton = styled.button(
+  ({ color }) => css`
+    padding: 1em 1.5em;
+    background: ${colors.red};
+    cursor: pointer;
+    border-radius: ${numeric.border}em;
+    color: ${colors.white};
+
+    &:hover {
+      background: ${colors.white};
+      color: ${colors.red};
+    }
+  `
+)
+
 export const Button = styled.button(
   ({ primary, size, color, alternate, bgColor, canActivate }) => css`
     padding: 1em 2em;
-    background: ${primary
-      ? colors.dark
-      : alternate
-      ? colors.lightGreen
-      : colors.cream};
+    background: ${
+      primary ? colors.dark : alternate ? colors.lightGreen : colors.cream
+    };
     transition: background 150ms ease-in, border-right 500ms ease-in;
     display: flex;
     align-items: center;
@@ -1011,11 +1259,9 @@ export const Button = styled.button(
     font-family: ${fonts.secondary};
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
-    color: ${primary
-      ? colors.darkCream
-      : alternate
-      ? colors.white
-      : colors.hardDark};
+    color: ${
+      primary ? colors.darkCream : alternate ? colors.white : colors.hardDark
+    };
 
     ion-icon {
       font-size: 1.5em;
@@ -1035,7 +1281,7 @@ export const Button = styled.button(
       ion-icon {
         opacity: 1;
         transform: translateX(0.2em) scale(1.5);
-        colors: ${colors.lightGreen};
+        color: ${colors.lightGreen};
       }
     }
 
@@ -1061,7 +1307,9 @@ export const Button = styled.button(
 
     &:focus,
     &:hover {
-      border-left: 0.5em solid ${canActivate ? colors.lightGreen : colors.red};
+      /* border-left: 0.5em solid ${
+        canActivate ? colors.lightGreen : colors.red
+      }; */
     }
   `
 )
@@ -1203,9 +1451,9 @@ export const AppStyle = styled.div(
   ({ color }) => css`
     display: flex;
     /* flex-direction: column; */
-    height: 100vh;
-    overflow: hidden;
-    z-index: 0;
+    /* height: 100vh; */
+    /* overflow: hidden; */
+    /* z-index: 0; */
     background: ${colors.dark};
     grid-template-columns: 0.5fr 3.5fr;
     /* grid-template-columns: .001fr 3fr; */

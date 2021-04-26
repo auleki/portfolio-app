@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Inconsolata&family=Recursive:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+header {
+  height: 3em;
+  padding: 2.5em;
+  background: #1a1a1a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+header svg {
+  font-size: 2em;
+  color: #fff;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+header svg:hover {
+  color: #A7C957;
+  cursor: pointer;
+}
+
+.sidenav {
+  background: #011627;
+  position: absolute;
+  height: 95vh;
+  padding: 0;
+  left: -100%;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-family: "Recursive";
+  z-index: 50;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+.sidenav .navigation {
+  list-style-type: none;
+}
+.sidenav .navigation a {
+  text-decoration: none;
+}
+.sidenav .navigation li {
+  padding: 1em 1.5em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F9F8F8;
+  margin-bottom: 1em;
+}
+.sidenav .navigation li span {
+  color: #F9F8F8;
+  -webkit-transition: left 300ms ease-in;
+  transition: left 300ms ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+.sidenav .navigation li ion-icon {
+  font-size: 1.5em;
+  margin-right: 1em;
+}
+.sidenav .navigation li:hover {
+  background: #242424;
+  border-right: 0.3em solid #A7C957;
+}
+.sidenav .navigation li:hover span {
+  padding-left: 0.5em;
+}
+.sidenav .navigation li:hover ion-icon {
+  color: #A7C957;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+.sidenav.active {
+  left: 0;
+}
+
+@media (max-width: 550px) {
+  .sidenav {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Sidebar.css.map */
