@@ -61,7 +61,6 @@ const ProjectCard = ({ project }) => {
 
 const ProjectsCard = ({ projects }) => {
   // console.log('PROJECT STATE:', projectSets)
-
   return (
     <>
       <div className='recentProjects'>
@@ -81,13 +80,12 @@ const ProjectsCard = ({ projects }) => {
 
 const RecentProjects = () => {
   const [projectSets, setProjectSets] = useState(projectData)
-
   return (
     <SectionWrap>
       {/* UNDER STYLEPROJECTCARD  */}
       <div className='projectsSection'>
         {projectSets.map((project, i) => (
-          <ProjectsCard projects={project} />
+          <ProjectsCard key={i} projects={project} />
         ))}
       </div>
     </SectionWrap>

@@ -14,7 +14,7 @@ const MagicCard = ({ project }) => {
   img4 = 'https://www.chartjs.org/img/chartjs-logo.svg'
 
   return (
-    <StyleMagicCard>
+    <StyleMagicCard key={project.title}>
       <div className='rank'>
         {project.clientOwned ? icons.lock : icons.unlock}
       </div>
@@ -54,7 +54,6 @@ const MagicCard = ({ project }) => {
           ))}
         </div>
       </div>
-
       <div className='background'></div>
     </StyleMagicCard>
   )
