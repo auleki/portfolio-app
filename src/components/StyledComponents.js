@@ -389,12 +389,13 @@ export const StyleMagicCard = styled.div(
   ({ color }) => css`
     width: 15.5em;
 		z-index: 400;
+		font-weight: 400;
 		display: flex;
 		/* align-items: center; */
 		justify-content: center;
     position: relative;
 		margin: 2em 0;
-		font-family: ${fonts.secondary};
+		font-family: ${fonts.crazy};
 		
 		.buttons {
 			display: flex;
@@ -587,6 +588,7 @@ export const StyleProjectCard = styled.div`
   color: ${colors.white};
   transition: border-bottom 300ms ease-in, box-shadow 800ms ease-in-out;
   width: 30em;
+  font-family: ${fonts.crazy};
   border-radius: 0.3em;
   border-bottom: 0.3em solid ${colors.cream};
   /* padding-bottom: 4em; */
@@ -670,7 +672,8 @@ export const SectionWrap = styled.div(
 	background: ${HeaderColor};
 	/* background-image: url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1616337683/portfolio/dots_vbwkxk.png"); */
 	background-attachment: fixed;
-	font-family: ${fonts.main};
+	font-family: ${fonts.secondary};
+	padding-bottom: 3em;
 	color: ${HeaderTextColor};
 
 	&::-webkit-scrollbar {
@@ -693,10 +696,23 @@ export const SectionWrap = styled.div(
 	.sectionProjects {
 		/* height: 60vh; */
 		/* background: ${colors.green}; */
+		margin: 3em 0 2em 0;
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(3, 2fr);
 		/* justify-content: space-between; */
+	}
+
+	// Handle Project Card Spacing
+	@media (min-width: 320px) and (max-width: 1053px) {
+		.sectionProjects {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			padding: 0 1em;
+			/* grid-template-columns: repeat(2, 2fr); */
+		}
 	}
 
 	.projectsSection {
@@ -870,6 +886,10 @@ export const SectionWrap = styled.div(
 	.recentProjects {
 			padding: 0 2em;
 			width: 100%;
+			/* height: 50vh; */
+			/* display: flex; */
+			/* flex-direction: column; */
+			/* justify-content: space-between; */
 			
 			.projects {
 				/* display: grid; */

@@ -29,7 +29,8 @@ export const numeric = {
 }
 
 export const fonts = {
-  main: 'Inconsolata',
+  alt: 'Inconsolata',
+  main: 'KoHo',
   secondary: 'Recursive',
   crazy: 'Carter One'
 }
